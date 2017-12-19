@@ -26,9 +26,6 @@ class ViewController: UIViewController {
         var arr: Array = [1, 2, 3]
         arr.append(7)
         
-        let str = "asdf"
-//        print(str.ht_isContainSpace())
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func didReceiveMemoryWarning() {
@@ -37,14 +34,14 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let testVC = TestViewController(imageString: "fanhui", title: "测试")
+        let testVC = TestViewController(backImgString: "dd", title: "vc1")
 //        testVC.navTitle = "返回"
-        testVC.test = "ddddd"
-        testVC.rightTitle = "rightTitle"
-        testVC.rightTitleColor = UIColor.red
-        testVC.mainBgViewColor = UIColor.blue
-        testVC.isHaveTabBar = true
-        print(testVC.isHaveTabBar)
+//        testVC.test = "ddddd"
+//        testVC.rightTitle = "rightTitle"
+//        testVC.rightTitleColor = UIColor.red
+//        testVC.mainBgViewColor = UIColor.blue
+//        testVC.isHaveTabBar = true
+//        print(testVC.isHaveTabBar)
         self.present(testVC, animated: true, completion: nil)
     }
 

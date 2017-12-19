@@ -23,9 +23,8 @@ class TestViewController: HTCustomNavController {
         }
     }
     
-    override init(imageString backImgString: String, title: String) {
-        super.init(imageString: backImgString, title: title)
-        
+    override init(backImgString: String, title: String) {
+        super.init(backImgString: backImgString, title: title)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,7 +33,8 @@ class TestViewController: HTCustomNavController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.BGView.backgroundColor = UIColor.cyan
+        self.titleColor = UIColor.red
+        self.mainBgViewColor = UIColor.green
         // Do any additional setup after loading the view.
     }
     
@@ -50,7 +50,6 @@ class TestViewController: HTCustomNavController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.dismiss(animated: true, completion: nil)
     }
-    
     
     /*
     // MARK: - Navigation

@@ -8,12 +8,12 @@
 
 import UIKit
 /// 自定义导航条的风格
-enum HTCustomNavStyle: UInt {
-    case Title = 0                  //只有title
-    case BackTile                   //包含返回按钮 & title
-    case BackTitleRightTitle        //包含返回按钮 & title & 右边文字item
-    case BackTitleRightImage        //包含返回按钮 & title & 右边图片item
-}
+//enum HTCustomNavStyle: UInt {
+//    case Title = 0                  //只有title
+//    case BackTile                   //包含返回按钮 & title
+//    case BackTitleRightTitle        //包含返回按钮 & title & 右边文字item
+//    case BackTitleRightImage        //包含返回按钮 & title & 右边图片item
+//}
 
 /// 自定义导航条控制器
 class HTCustomNavController: UIViewController {
@@ -40,25 +40,26 @@ class HTCustomNavController: UIViewController {
     open var allTitleColor: UIColor = UIColor.clear{
         didSet{
             titleLabel.textColor = allTitleColor
-            rightBtn.setTitleColor(allTitleColor, for: .normal)
+            rightLabel.textColor = allTitleColor
         }
     }
     
-    /// 导航条title的字体色(默认为红色)
-    open var titleColor: UIColor = UIColor.red{
+    /// 导航条title的字体色(默认为黑色)
+    open var titleColor: UIColor = UIColor.black{
         didSet{
             titleLabel.textColor = titleColor
         }
     }
     
+    /// 右边item的titleColor(文字形式)
     open var rightTitleColor: UIColor = UIColor.gray{
         didSet{
-            rightBtn.setTitleColor(rightTitleColor, for: .normal)
+            rightLabel.textColor = rightTitleColor
         }
     }
     
-    /// 导航条title(默认为title)
-    open var navTitle: String = "title"{
+    /// 导航条title(默认为"")
+    open var navTitle: String = ""{
         didSet{
             titleLabel.text = navTitle
         }
@@ -72,9 +73,9 @@ class HTCustomNavController: UIViewController {
     }
     
     /// 右边item的title(文字形式)
-    open var rightTitle: String = "rightTitle"{
+    open var rightTitle: String = ""{
         didSet{
-            rightBtn.setTitle(rightTitle, for: .normal)
+            rightLabel.text = rightTitle
         }
     }
     
@@ -91,11 +92,12 @@ class HTCustomNavController: UIViewController {
     fileprivate let viewY: CGFloat = isIphoneX ? 44.0 : 20.0
     
     // MARK: 私有的视图控件
-    private lazy var BGView = UIView()                           /// 空白出背景图层
+    lazy var BGView = UIView()                                   /// 空白出背景图层
     private lazy var topView = UIView()                          /// 导航条背景图层
     private lazy var backBtn = UIButton(type: .custom)           /// 返回按钮
     private lazy var titleLabel = UILabel()                      /// titleLabel
     private lazy var rightBtn = UIButton(type: .custom)          /// 右边的item
+    private lazy var rightLabel = UILabel()                      /// 右边的item(文字形式)
     
 //    open var style: HTCustomNavStyle = .Title;
     
@@ -112,6 +114,7 @@ class HTCustomNavController: UIViewController {
     init(title: String) {
         navTitle = title
         super.init(nibName: nil, bundle: nil)
+        self.creatView()
     }
     
     /// 创建自定义导航条控制器
@@ -119,10 +122,11 @@ class HTCustomNavController: UIViewController {
     /// - Parameters:
     ///   - backImgString: 返回按钮图片string
     ///   - title: title
-    init(imageString backImgString: String, title: String) {
+    init(backImgString: String, title: String) {
         backImageString = backImgString
         navTitle = title
         super.init(nibName: nil, bundle: nil)
+        self.creatView()
     }
     
     /// 创建自定义导航条控制器
@@ -131,11 +135,12 @@ class HTCustomNavController: UIViewController {
     ///   - backImgString: 返回按钮图片
     ///   - title: title
     ///   - rightTitle: 右边item(文字形式)
-    init(imageString backImgString: String, title: String, rightTitle: String) {
+    init(backImgString: String, title: String, rightTitle: String) {
         backImageString = backImgString
         navTitle = title
         self.rightTitle = rightTitle
         super.init(nibName: nil, bundle: nil)
+        self.creatView()
     }
     
     /// 创建自定义导航条控制器
@@ -144,11 +149,12 @@ class HTCustomNavController: UIViewController {
     ///   - backImgString: 返回按钮图片
     ///   - title: title
     ///   - rightImgString: 右边item(图片形式)
-    init(imageString backImgString: String, title: String, rightImgString: String) {
+    init(backImgString: String, title: String, rightImgString: String) {
         backImageString = backImgString
         navTitle = title
         self.rightImgString = rightImgString
         super.init(nibName: nil, bundle: nil)
+        self.creatView()
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -164,31 +170,46 @@ class HTCustomNavController: UIViewController {
     /// 布局导航条
     fileprivate func creatNavView(){
         
-        topView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_W, height: navHeight))
+        topView.frame = CGRect(x: 0, y: 0, width: SCREEN_W, height: navHeight)
         topView.backgroundColor = UIColor.white
         view.addSubview(topView)
         
-        backBtn = UIButton(type: .custom)
-        backBtn.setTitleColor(UIColor.red, for: .normal)
-        backBtn.setTitle(navTitle, for: .normal)
-        backBtn.frame = CGRect(x: 20, y: viewY, width: 44, height: 44)
-        backBtn.addTarget(self, action: #selector(clickBackBtn), for: .touchUpInside)
-        topView.addSubview(backBtn)
+        if backImageString != "" {
+            backBtn.frame = CGRect(x: 20, y: viewY, width: 44, height: 44)
+            backBtn.adjustsImageWhenHighlighted = false
+            backBtn.setImage(UIImage.init(named: backImageString), for: .normal)
+            backBtn.addTarget(self, action: #selector(clickBackBtn), for: .touchUpInside)
+            topView.addSubview(backBtn)
+        }
         
-        titleLabel = UILabel(frame: CGRect(x: ht_W(125), y: viewY, width: ht_W(130), height: 44))
-        titleLabel.text = navTitle
-        titleLabel.textAlignment = .center
-        titleLabel.textColor = titleColor
-        titleLabel.font = ht_fontW(17)
-        topView.addSubview(titleLabel)
+        if navTitle != "" {
+            titleLabel.frame = CGRect(x: ht_W(125), y: viewY, width: ht_W(130), height: 44)
+            titleLabel.text = navTitle
+            titleLabel.textAlignment = .center
+            titleLabel.textColor = titleColor
+            titleLabel.font = ht_fontW(17)
+            topView.addSubview(titleLabel)
+        }
         
-        rightBtn = UIButton(type: .custom)
-        rightBtn.frame = CGRect(x: ht_W(320), y: viewY, width: 44, height: 44)
-        rightBtn.adjustsImageWhenHighlighted = false
-        rightBtn.setTitleColor(rightTitleColor, for: .normal)
-        rightBtn.setImage(UIImage.init(named: rightImgString), for: .normal)
-        rightBtn.addTarget(self, action: #selector(clickRightItem), for: .touchUpInside)
-        topView.addSubview(rightBtn)
+        if rightImgString != "" {
+            rightBtn.frame = CGRect(x: ht_W(320), y: viewY, width: 44, height: 44)
+            rightBtn.adjustsImageWhenHighlighted = false
+            rightBtn.setImage(UIImage.init(named: rightImgString), for: .normal)
+            rightBtn.addTarget(self, action: #selector(clickRightItem), for: .touchUpInside)
+            topView.addSubview(rightBtn)
+        }
+        
+        if rightTitle != "" {
+            rightLabel.frame = CGRect(x: SCREEN_W - ht_W(150), y: viewY, width: ht_W(130), height: 44)
+            rightLabel.isUserInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: #selector(clickRightItem))
+            rightLabel.addGestureRecognizer(tap)
+            rightLabel.text = navTitle
+            rightLabel.textAlignment = .right
+            rightLabel.textColor = rightTitleColor
+            rightLabel.font = ht_fontW(17)
+            topView.addSubview(rightLabel)
+        }
         
     }
     /// 布局主视图
@@ -224,14 +245,12 @@ class HTCustomNavController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("viewWillAppear")
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        print("viewWillDisappear")
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.isHidden = true
     }
@@ -240,8 +259,7 @@ class HTCustomNavController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
-        self.creatView()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -267,10 +285,6 @@ class HTCustomNavController: UIViewController {
 extension HTCustomNavController{
     
     
-    
-    func setTitleColor(color: UIColor){
-        backBtn.setTitleColor(color, for: .normal)
-    }
     
 }
 

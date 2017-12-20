@@ -72,6 +72,21 @@ extension Date{
         let component: DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         return "\(component.year!)-\(component.month!)-\(component.day!) \(component.hour!)-\(component.minute!)-\(component.second!)"
     }
+    
+    /// 将时间字符串转为时间
+    ///
+    /// - Parameters:
+    ///   - dateString: 时间字符串
+    ///   - format: 时间格式
+    /// - Returns: 时间 
+    static func ht_transfStringToDate(dateString: String, format:String) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.date(from: format)
+        let date = dateFormatter.date(from: dateString)
+        return date!
+    }
 }
 
 

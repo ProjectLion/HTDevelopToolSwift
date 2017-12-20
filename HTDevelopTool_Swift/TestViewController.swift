@@ -23,18 +23,18 @@ class TestViewController: HTCustomNavController {
         }
     }
     
-    override init(backImgString: String, title: String) {
-        super.init(backImgString: backImgString, title: title)
+    override init(title: String) {
+        super.init(title: title)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleColor = UIColor.red
         self.mainBgViewColor = UIColor.green
+        
         // Do any additional setup after loading the view.
     }
     
@@ -48,7 +48,11 @@ class TestViewController: HTCustomNavController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.dismiss(animated: true, completion: nil)
+        let date = HTDatePickerSwift(frame: CGRect.init(x: 0, y: SCREEN_H, width: SCREEN_W, height: 300), style: .YMDHMS)
+        date.isCanSelectBefore = true
+        date.delegate = self
+        view.addSubview(date)
+        date.showDatePicker()
     }
     
     /*
@@ -61,4 +65,12 @@ class TestViewController: HTCustomNavController {
     }
     */
 
+}
+
+extension TestViewController: HTDatePickerDelegate{
+    
+    func clickEnsure(selectDate: String) {
+        print(selectDate)
+//        date.hideDatePicker()
+    }
 }

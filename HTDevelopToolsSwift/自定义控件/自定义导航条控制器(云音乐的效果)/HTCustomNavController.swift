@@ -92,12 +92,12 @@ class HTCustomNavController: UIViewController {
     fileprivate let viewY: CGFloat = isIphoneX ? 44.0 : 20.0
     
     // MARK: 私有的视图控件
-    lazy var BGView = UIView()                                   /// 空白出背景图层
-    private lazy var topView = UIView()                          /// 导航条背景图层
-    private lazy var backBtn = UIButton(type: .custom)           /// 返回按钮
-    private lazy var titleLabel = UILabel()                      /// titleLabel
-    private lazy var rightBtn = UIButton(type: .custom)          /// 右边的item
-    private lazy var rightLabel = UILabel()                      /// 右边的item(文字形式)
+    var BGView = UIView()                                   // 空白出背景图层
+    private var topView = UIView()                          // 导航条背景图层
+    private var backBtn = UIButton(type: .custom)           // 返回按钮
+    private var titleLabel = UILabel()                      // titleLabel
+    private var rightBtn = UIButton(type: .custom)          // 右边的item
+    private var rightLabel = UILabel()                      // 右边的item(文字形式)
     
 //    open var style: HTCustomNavStyle = .Title;
     

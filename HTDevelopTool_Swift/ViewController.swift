@@ -16,12 +16,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let v = UIView(frame: CGRect(x: ht_W(1), y: 200, width: 200, height: 50))
         v.backgroundColor = ht_colorWith(hexValue: 0xefefef)
-//        print(v.ht_x)
-//        print(v.ht_y)
-//        print(v.ht_right)
-//        v.ht_left = ht_setW(220)
-//        print(v.ht_x)
-//        print("d \(v.ht_x)")
         view.addSubview(v)
         var arr: Array = [1, 2, 3]
         arr.append(7)
@@ -34,7 +28,7 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let testVC = TestViewController(backImgString: "dd", title: "vc1")
+        let testVC = TestViewController(title: "vc")
 //        testVC.navTitle = "返回"
 //        testVC.test = "ddddd"
 //        testVC.rightTitle = "rightTitle"

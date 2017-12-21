@@ -14,8 +14,8 @@ extension Date{
     ///
     /// - Parameter date: 时间
     /// - Returns: 年份
-    static func ht_getYearWith(date: Date) -> Int{
-        let component: DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+    func ht_getYear() -> Int{
+        let component: DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
         return component.year!
     }
     
@@ -23,8 +23,8 @@ extension Date{
     ///
     /// - Parameter date: 时间
     /// - Returns: 月份
-    static func ht_getMonthWith(date: Date) -> Int{
-        let component: DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+    func ht_getMonth() -> Int{
+        let component: DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
         return component.month!
     }
     
@@ -32,8 +32,8 @@ extension Date{
     ///
     /// - Parameter date: 时间
     /// - Returns: 日期
-    static func ht_getDayWith(date: Date) -> Int{
-        let component: DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+    func ht_getDay() -> Int{
+        let component: DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
         return component.day!
     }
     
@@ -41,8 +41,8 @@ extension Date{
     ///
     /// - Parameter date: 时间
     /// - Returns: 时
-    static func ht_getHourWith(date: Date) -> Int{
-        let component: DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+    func ht_getHour() -> Int{
+        let component: DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
         return component.hour!
     }
     
@@ -50,8 +50,8 @@ extension Date{
     ///
     /// - Parameter date: 时间
     /// - Returns: 分钟
-    static func ht_getMinuteWith(date: Date) -> Int{
-        let component: DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+    func ht_getMinute() -> Int{
+        let component: DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
         return component.minute!
     }
     
@@ -59,8 +59,8 @@ extension Date{
     ///
     /// - Parameter date: 时间
     /// - Returns: 秒
-    static func ht_getSecondWith(date: Date) -> Int{
-        let component: DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+    func ht_getSecond() -> Int{
+        let component: DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
         return component.second!
     }
     
@@ -79,7 +79,7 @@ extension Date{
     ///   - dateString: 时间字符串
     ///   - format: 时间格式
     /// - Returns: 时间 
-    static func ht_transfStringToDate(dateString: String, format:String) -> Date{
+    static func ht_transformStringToDate(dateString: String, format:String) -> Date{
         let dateFormatter = DateFormatter()
         dateFormatter.locale = NSLocale.current
         dateFormatter.timeZone = TimeZone.current

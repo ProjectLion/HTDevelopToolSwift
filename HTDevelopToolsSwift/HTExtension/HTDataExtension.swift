@@ -11,19 +11,18 @@ import UIKit
 
 extension Data{
     
-    /// 将图片转为data
+    /// 将data数据转为Image
     ///
-    /// - Parameter image: 需要转的图片
-    /// - Returns: data
-    static func ht_dataWith(image: UIImage) -> Data{
-        var data = Data()
-        if UIImagePNGRepresentation(image) != nil {
-            data = UIImageJPEGRepresentation(image, 1)!
-        }else{
-            data = UIImageJPEGRepresentation(image, 0.01)!
+    /// - Parameter data: 图片数据
+    /// - Returns: 获取到的图片
+    func ht_getImageWith() -> UIImage?{
+        
+        guard let img = UIImage(data: self) else {
+            return nil
         }
-        return data
+        return img
     }
+    
 }
 
 

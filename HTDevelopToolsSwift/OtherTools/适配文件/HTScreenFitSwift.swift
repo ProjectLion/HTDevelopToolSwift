@@ -31,18 +31,18 @@ import UIKit
 
 
 /// 屏幕宽
-let SCREEN_W = UIScreen.main.bounds.width
+let SCREEN_W = UIScreen.ht_screecWidth
 /// 屏幕高
-let SCREEN_H = UIScreen.main.bounds.height
+let SCREEN_H = UIScreen.ht_screenHeight
 /// 是否是iPhone X
 let isIphoneX = ((SCREEN_W == 375.0 && SCREEN_H == 812.0) ? true : false)
 /// 经过比例适配后的宽
 public func ht_W(_ w: CGFloat) -> CGFloat{
-    return (w / 375.0) * UIScreen.main.bounds.width
+    return UIScreen.ht_setWidth(width: w)
 }
 /// 经过比例适配后的高
 public func ht_H(_ h: CGFloat) -> CGFloat{
-    return (h / 667.0) * UIScreen.main.bounds.height
+    return UIScreen.ht_setHeight(height: h)
 }
 /// 经过宽比例适配后的字体
 public func ht_fontW(_ w:CGFloat) -> UIFont{

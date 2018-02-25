@@ -10,17 +10,18 @@ import Foundation
 import UIKit
 
 extension UIScreen{
+    
     /// 屏幕的size
-    func ht_screenSize() -> CGSize{
-        return self.bounds.size
+    class func ht_screenSize() -> CGSize{
+        return UIScreen.main.bounds.size
     }
     /// 屏幕的宽
-    func ht_screecWidth() -> CGFloat{
-        return self.bounds.width
+    class func ht_screecWidth() -> CGFloat{
+        return UIScreen.main.bounds.width
     }
     /// 屏幕的高
-    func ht_screenHeight() -> CGFloat{
-        return self.bounds.height
+    class func ht_screenHeight() -> CGFloat{
+        return UIScreen.main.bounds.height
     }
     /// 适配后的宽(iPhone 6)
     class func ht_setWidth(width: CGFloat) -> CGFloat{

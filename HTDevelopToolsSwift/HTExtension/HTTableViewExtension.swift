@@ -49,7 +49,7 @@ extension UITableView{
     ///   - separatorColor: 分割线颜色
     ///   - backGroundColor: table的背景色  (默认白色)
     func ht_setTableSeparatorWith(style: UITableViewCellSeparatorStyle?, separatorColor: UIColor?, backGroundColor: UIColor?){
-        if style == nil {
+        if style == nil || style == .none{
             self.separatorStyle = .none
             return
         }

@@ -9,7 +9,10 @@
 import Foundation
 import UIKit
 
-extension UIView{
+/**
+ *   properties
+ */
+extension UIView {
     /// view的x
     var ht_x: CGFloat {
         get{
@@ -111,6 +114,25 @@ extension UIView{
     }
 }
 
+/**
+ *   Method
+ */
+extension UIView {
+    
+    /// 创建一个view
+    ///
+    /// - Parameters:
+    ///   - x: x
+    ///   - y: y
+    ///   - width: width
+    ///   - height: height
+    ///   - backGroundColor: 背景色
+    convenience init(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, backGroundColor: UIColor = .white){
+        self.init(frame: CGRect(x: x, y: y, width: width, height: height))
+        self.backgroundColor = backGroundColor
+    }
+    
+}
 
 
 

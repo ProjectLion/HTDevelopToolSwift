@@ -18,6 +18,18 @@ extension UILabel {
 /// Method
 extension UILabel {
     
+    
+    /// 创建一个label
+    ///
+    /// - Parameters:
+    ///   - x: x
+    ///   - y: y
+    ///   - width: width
+    ///   - height: height 
+    convenience init(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) {
+        self.init(frame: CGRect(x: x, y: y, width: width, height: height))
+    }
+    
     /// 用frame创建一个label
     ///
     /// - Parameters:
@@ -82,6 +94,20 @@ extension UILabel {
     public func ht_set(lines: Int, textAlignment: NSTextAlignment) {
         self.numberOfLines = lines
         self.textAlignment = textAlignment
+    }
+    
+    /// 设置富文本
+    ///
+    /// - Parameters:
+    ///   - attributedText: 富文本内容
+    ///   - attributedName: 富文本的key值
+    ///   - attributedValue: 富文本的value值
+    ///   - location: 开始位置
+    ///   - length: 长度
+    public func ht_set(attributedText: String, attributedName: NSAttributedStringKey, attributedValue: Any, location: Int, length: Int) {
+        let attriStr = NSMutableAttributedString(string: attributedText)
+        attriStr.addAttributes([attributedName: attributedValue], range: NSRange(location: location, length: length))
+        self.attributedText = attriStr
     }
 }
 

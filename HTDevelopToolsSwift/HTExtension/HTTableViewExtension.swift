@@ -11,6 +11,20 @@ import UIKit
 
 
 extension UITableView{
+    
+    
+    /// 创建一个tableView style默认为plain
+    ///
+    /// - Parameters:
+    ///   - x: x
+    ///   - y: y
+    ///   - w: w
+    ///   - h: h
+    ///   - style: tableStyle
+    convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, style: UITableViewStyle = .plain) {
+        self.init(frame: CGRect(x: x, y: y, width: w, height: h), style: style)
+    }
+    
     /// 创建一个tableView
     ///
     /// - Parameters:
@@ -20,23 +34,23 @@ extension UITableView{
     ///   - h: h
     ///   - style: tableStyle
     /// - Returns: tableView
-    class func ht_initTableWith(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, style: UITableViewStyle) -> UITableView{
+    class func ht_init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, style: UITableViewStyle = .plain) -> UITableView{
         let table: UITableView?
         
         if isIphoneX {
             if h <= SCREEN_H - 88.0 {
-                table = UITableView(frame: CGRect(x: x, y: y, width: w, height: h), style: style)
+                table = UITableView(x: x, y: y, w: w, h: h, style: style)
                 return table!
             }else{
-                table = UITableView(frame: CGRect(x: x, y: y, width: w, height: h - 88.0), style: style)
+                table = UITableView(x: x, y: y, w: w, h: h, style: style)
                 return table!
             }
         }else{
             if h <= SCREEN_H - 64.0 {
-                table = UITableView(frame: CGRect(x: x, y: y, width: w, height: h), style: style)
+                table = UITableView(x: x, y: y, w: w, h: h, style: style)
                 return table!
             }else{
-                table = UITableView(frame: CGRect(x: x, y: y, width: w, height: h - 64.0), style: style)
+                table = UITableView(x: x, y: y, w: w, h: h, style: style)
                 return table!
             }
         }
@@ -46,19 +60,22 @@ extension UITableView{
     ///
     /// - Parameters:
     ///   - style: 分割线风格(系统)  (默认为.none)
-    ///   - separatorColor: 分割线颜色
+    ///   - separatorColor: 分割线颜色   (默认为黑色)
     ///   - backGroundColor: table的背景色  (默认白色)
-    func ht_setTableSeparatorWith(style: UITableViewCellSeparatorStyle?, separatorColor: UIColor?, backGroundColor: UIColor?){
-        if style == nil || style == .none{
-            self.separatorStyle = .none
-            return
-        }
-        if backGroundColor == nil {
-            self.backgroundColor = UIColor.white
-        }
-        self.separatorStyle = style!
-        self.separatorColor = separatorColor!
-        self.backgroundColor = backGroundColor!
+    public func ht_set(separatorStyle: UITableViewCellSeparatorStyle = .none, separatorColor: UIColor = .black, backGroundColor: UIColor = .white){
+        self.separatorStyle = separatorStyle
+        self.separatorColor = separatorColor
+        self.backgroundColor = backGroundColor
+    }
+    
+    /// 为tableView设置代理和数据源
+    ///
+    /// - Parameters:
+    ///   - delegate: delegate
+    ///   - dataSource: 数据源
+    public func ht_set(delegate: UITableViewDelegate, dataSource: UITableViewDataSource){
+        self.delegate = delegate
+        self.dataSource = dataSource
     }
     
 }

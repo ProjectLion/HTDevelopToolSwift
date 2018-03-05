@@ -65,14 +65,13 @@ class LEEAlert: NSObject {
         }
     }
     
-    private var mainWindow: UIWindow?
+    var mainWindow: UIWindow?
     
 //    private var 
     /**
-     *   懒加载
+     *   懒加载window
      */
-    /// window
-    private lazy var leeWindow: LEEAlertWindow = {
+    lazy var leeWindow: LEEAlertWindow = {
         ()->LEEAlertWindow in
         let window = LEEAlertWindow.init(frame: UIScreen.main.bounds)
         window.rootViewController = UIViewController()
@@ -82,7 +81,7 @@ class LEEAlert: NSObject {
         return window
     }()
     
-    private lazy var queueArray: Array<LEEAlertConfig> = {
+    lazy var queueArray: Array<LEEAlertConfig> = {
         ()->Array<LEEAlertConfig> in
         let arr: [LEEAlertConfig] = []
         return arr

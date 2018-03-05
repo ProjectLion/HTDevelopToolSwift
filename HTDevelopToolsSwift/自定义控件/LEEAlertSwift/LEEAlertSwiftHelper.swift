@@ -48,7 +48,7 @@ enum LEEActionBorderPosition {
     /// 上
     case Top
     /// 下
-    case Bootom
+    case Bottom
     /// 左
     case Left
     /// 右
@@ -111,7 +111,7 @@ typealias LEEConfigToBlurEffectStyle = (UIBlurEffectStyle) -> LEEAlertConfigMode
 typealias LEEConfigToInterfaceOrientationMask = (UIInterfaceOrientationMask) -> LEEAlertConfigModel?
 typealias LEEConfigToFloatBlock = (@escaping (LEEScreenOrientationType) -> CGFloat) -> LEEAlertConfigModel?
 typealias LEEConfigToAction = (@escaping (LEEAction) -> Swift.Void) -> LEEAlertConfigModel?
-typealias LEEConfigToCustomView = (@escaping (_ custom: LeeCustomView)->Swift.Void) -> LEEAlertConfigModel?
+typealias LEEConfigToCustomView = (@escaping (_ custom: LEECustomView)->Swift.Void) -> LEEAlertConfigModel?
 typealias LEEConfigToStringAndBlock = (String, @escaping ()->Swift.Void) -> LEEAlertConfigModel?
 typealias LEEConfigToConfigLabel = (@escaping (_ label: UILabel)->Swift.Void) -> LEEAlertConfigModel?
 typealias LEEConfigToConfigTextField = (@escaping (_ textField: UITextField)->Swift.Void) -> LEEAlertConfigModel?

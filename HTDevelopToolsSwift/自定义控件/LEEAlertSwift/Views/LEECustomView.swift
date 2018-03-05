@@ -1,27 +1,26 @@
 //
-//  LeeCustomView.swift
+//  LEECustomView.swift
 //  HTDevelopTool_Swift
 //
-//  Created by HT on 2018/1/23.
+//  Created by apple on 2018/3/2.
 //  Copyright © 2018年 HT. All rights reserved.
 //
 
 import UIKit
 
-class LeeCustomView: NSObject {
-    
+class LEECustomView: NSObject {
     /// 自定义视图对象
-    public var view: UIView?
+    public var view: UIView!
     
     /// 自定义视图位置 默认居中
-    public var positionType: LEECustomViewPositionType?
+    public var positionType: LEECustomViewPositionType = .Center
     
     /// 是否自适应宽度
     public var isAutoWidth: Bool?
     
-    private var item: LEEItem?
+    public var item: LEEItem!
     
-    private var size: CGSize?
+    public var size: CGSize?
     
     var sizeChangedBloack: ()->Swift.Void? {
         didSet{
@@ -49,7 +48,7 @@ class LeeCustomView: NSObject {
         super.init()
     }
     
-    /// 添加观察 
+    /// 添加观察
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         let view = object as! UIView
@@ -58,5 +57,4 @@ class LeeCustomView: NSObject {
             self.sizeChangedBloack()
         }
     }
-    
 }

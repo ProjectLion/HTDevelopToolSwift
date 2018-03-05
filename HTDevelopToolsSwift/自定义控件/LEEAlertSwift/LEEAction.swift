@@ -10,7 +10,7 @@ import UIKit
 
 class LEEAction: NSObject {
     /// action类型
-    public var type: LEEActionType?
+    public var type: LEEActionType = .Default
     
     /// action标题
     public var title: String?
@@ -29,6 +29,9 @@ class LEEAction: NSObject {
     
     /// action标题颜色
     public var titleColor: UIColor?
+    
+    /// action高亮标题颜色 
+    public var highlightColor: UIColor?
     
     /// action背景颜色
     public var backgroundColor: UIColor?
@@ -64,7 +67,7 @@ class LEEAction: NSObject {
     public var borderColor: UIColor?
     
     /// action边框位置
-    public var borderPosition: LEEActionBorderPosition?
+    public var borderPosition: LEEActionBorderPosition = .Top
     
     /// action点击不关闭 (仅适用于默认类型)
     public var isClickNotClose: Bool?
@@ -77,7 +80,7 @@ class LEEAction: NSObject {
         self.updateBlock(self)
     }
     
-    private let updateBlock: (_ action: LEEAction)->() = {
+    public var updateBlock: (_ action: LEEAction)->() = {
         action in
         
     }

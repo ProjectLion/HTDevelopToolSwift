@@ -17,7 +17,7 @@ class LEEItem: NSObject {
     public var insets: UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
     
     /// item设置视图回调
-    public var viewBlock: (_ view: UIView) -> () = {
+    public var viewBlock: (_ view: Any) -> () = {
         view in
         
     }

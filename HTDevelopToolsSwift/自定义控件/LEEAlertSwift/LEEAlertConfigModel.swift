@@ -21,7 +21,7 @@ class LEEAlertConfigModel: NSObject {
     public var modelCloseAnimationDuration: CGFloat?          // 消失动画时间 默认0.35
     public var modelBackgroundStyleColorAlpha: CGFloat?      // 背景透明度 默认0.45
     public var modelWindowLevel: UIWindowLevel?              // window等级 默认alert
-    public var modelQueuePriority: Int?                      // 队列优先级 默认0
+    public var modelQueuePriority: Int = 0                   // 队列优先级 默认0
     
     public var modelShadowColor: UIColor?                    // 阴影颜色 默认黑色
     public var modelHeaderColor: UIColor?                    // 顶部视图颜色 默认白色
@@ -48,11 +48,11 @@ class LEEAlertConfigModel: NSObject {
     public var modelFinishConfig: ()->Swift.Void?
     public var modelCloseComplete: ()->Swift.Void?
     
-    public var modelBackgroundStyle: LEEBackgroundStyle?             // 背景风格 默认半透明
-    public var modelOpenAnimationStyle: LEEAnimatType?               // 开启动画风格 默认淡入
-    public var modelCloseAnimationStyle: LEEAnimatType?              // 关闭动画风格 默认淡出
+    public var modelBackgroundStyle: LEEBackgroundStyle = .Translucent // 背景风格 默认半透明
+    public var modelOpenAnimationStyle: LEEAnimatType = .Fade        // 开启动画风格 默认淡入
+    public var modelCloseAnimationStyle: LEEAnimatType = .Fade       // 关闭动画风格 默认淡出
     
-    public var modelBackgroundBlurEffectStyle: UIBlurEffectStyle?    // 背景模糊风格 默认灰色
+    public var modelBackgroundBlurEffectStyle: UIBlurEffectStyle = .dark // 背景模糊风格 默认灰色
     public var modelSupportedInterfaceOrientations: UIInterfaceOrientationMask?  ///
     
     public var modelSheetCancelSpaceColor: UIColor?                  // sheet取消按钮间距颜色 默认白色
@@ -221,7 +221,7 @@ extension LEEAlertConfigModel {
     public var LeeAddCustomView: LEEConfigToCustomView {
         get{
             return { [weak self]
-                (block: @escaping(_ custom: LeeCustomView)->Swift.Void)->LEEAlertConfigModel in
+                (block: @escaping(_ custom: LEECustomView)->Swift.Void)->LEEAlertConfigModel in
                 return (self?.LeeAddItem({ item in
                     item.type = .CustomView
                     item.insets = UIEdgeInsetsMake(5, 0, 5, 0)
@@ -691,7 +691,7 @@ extension LEEAlertConfigModel {
                 return (self?.LeeAddItem({ (item) in
                     item.type = .TextField
                     item.insets = UIEdgeInsetsMake(10, 0, 10, 0)
-                    item.viewBlock = block as! (UIView) -> ()
+                    item.viewBlock = block as! (Any) -> ()
                 }))!
             }
         }

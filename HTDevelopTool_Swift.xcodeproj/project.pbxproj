@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18041C6B2015E52500C9826B /* LEEAlertSwiftHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18041C6A2015E52500C9826B /* LEEAlertSwiftHelper.swift */; };
-		18041C6D2015E95000C9826B /* LEEAlertConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18041C6C2015E95000C9826B /* LEEAlertConfigModel.swift */; };
-		18041C6F2015ECA300C9826B /* LEEAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18041C6E2015ECA300C9826B /* LEEAction.swift */; };
-		18041C712015EE7600C9826B /* LEEItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18041C702015EE7600C9826B /* LEEItem.swift */; };
-		18041C732017375600C9826B /* LeeCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18041C722017375600C9826B /* LeeCustomView.swift */; };
 		1818793F1FE27BFA009CD807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818793E1FE27BFA009CD807 /* AppDelegate.swift */; };
 		181879411FE27BFA009CD807 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181879401FE27BFA009CD807 /* ViewController.swift */; };
 		181879441FE27BFA009CD807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181879421FE27BFA009CD807 /* Main.storyboard */; };
@@ -28,23 +23,12 @@
 		181879701FE793EE009CD807 /* HTTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818796F1FE793EE009CD807 /* HTTableViewExtension.swift */; };
 		181879721FE7A67C009CD807 /* HTDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181879711FE7A67C009CD807 /* HTDateExtension.swift */; };
 		181879741FE9EEA4009CD807 /* HTDatePickerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181879731FE9EEA4009CD807 /* HTDatePickerSwift.swift */; };
-		1836834E20230A1A008E4BC5 /* LEEAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1836834D20230A1A008E4BC5 /* LEEAlert.swift */; };
-		1836835020230BF6008E4BC5 /* LEEAlertConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1836834F20230BF6008E4BC5 /* LEEAlertConfig.swift */; };
-		1836835220231186008E4BC5 /* LEEAlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1836835120231186008E4BC5 /* LEEAlertWindow.swift */; };
-		1836835420231B93008E4BC5 /* LEEBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1836835320231B93008E4BC5 /* LEEBaseViewController.swift */; };
-		1836835620231BEE008E4BC5 /* LEEAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1836835520231BEE008E4BC5 /* LEEAlertViewController.swift */; };
-		1836835820231C03008E4BC5 /* LEEActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1836835720231C03008E4BC5 /* LEEActionSheetViewController.swift */; };
 		186A2848201084830058AF10 /* HTUIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186A2847201084830058AF10 /* HTUIImageExtension.swift */; };
 		186D22F4204165A30017949C /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D22F3204165A30017949C /* CustomView.swift */; };
 		186D22F620416ACC0017949C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D22F520416ACC0017949C /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18041C6A2015E52500C9826B /* LEEAlertSwiftHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEEAlertSwiftHelper.swift; sourceTree = "<group>"; };
-		18041C6C2015E95000C9826B /* LEEAlertConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEEAlertConfigModel.swift; sourceTree = "<group>"; };
-		18041C6E2015ECA300C9826B /* LEEAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEEAction.swift; sourceTree = "<group>"; };
-		18041C702015EE7600C9826B /* LEEItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEEItem.swift; sourceTree = "<group>"; };
-		18041C722017375600C9826B /* LeeCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeeCustomView.swift; sourceTree = "<group>"; };
 		1818793B1FE27BFA009CD807 /* HTDevelopTool_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTDevelopTool_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1818793E1FE27BFA009CD807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		181879401FE27BFA009CD807 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,12 +47,6 @@
 		1818796F1FE793EE009CD807 /* HTTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTableViewExtension.swift; sourceTree = "<group>"; };
 		181879711FE7A67C009CD807 /* HTDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTDateExtension.swift; sourceTree = "<group>"; };
 		181879731FE9EEA4009CD807 /* HTDatePickerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTDatePickerSwift.swift; sourceTree = "<group>"; };
-		1836834D20230A1A008E4BC5 /* LEEAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEEAlert.swift; sourceTree = "<group>"; };
-		1836834F20230BF6008E4BC5 /* LEEAlertConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEEAlertConfig.swift; sourceTree = "<group>"; };
-		1836835120231186008E4BC5 /* LEEAlertWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEEAlertWindow.swift; sourceTree = "<group>"; };
-		1836835320231B93008E4BC5 /* LEEBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEEBaseViewController.swift; sourceTree = "<group>"; };
-		1836835520231BEE008E4BC5 /* LEEAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEEAlertViewController.swift; sourceTree = "<group>"; };
-		1836835720231C03008E4BC5 /* LEEActionSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEEActionSheetViewController.swift; sourceTree = "<group>"; };
 		186A2847201084830058AF10 /* HTUIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTUIImageExtension.swift; sourceTree = "<group>"; };
 		186D22F3204165A30017949C /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		186D22F520416ACC0017949C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -85,24 +63,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18041C692015E4D300C9826B /* LEEAlertSwift */ = {
-			isa = PBXGroup;
-			children = (
-				18041C6A2015E52500C9826B /* LEEAlertSwiftHelper.swift */,
-				18041C6C2015E95000C9826B /* LEEAlertConfigModel.swift */,
-				18041C6E2015ECA300C9826B /* LEEAction.swift */,
-				18041C702015EE7600C9826B /* LEEItem.swift */,
-				18041C722017375600C9826B /* LeeCustomView.swift */,
-				1836834D20230A1A008E4BC5 /* LEEAlert.swift */,
-				1836834F20230BF6008E4BC5 /* LEEAlertConfig.swift */,
-				1836835120231186008E4BC5 /* LEEAlertWindow.swift */,
-				1836835320231B93008E4BC5 /* LEEBaseViewController.swift */,
-				1836835520231BEE008E4BC5 /* LEEAlertViewController.swift */,
-				1836835720231C03008E4BC5 /* LEEActionSheetViewController.swift */,
-			);
-			path = LEEAlertSwift;
-			sourceTree = "<group>";
-		};
 		181879321FE27BFA009CD807 = {
 			isa = PBXGroup;
 			children = (
@@ -150,7 +110,6 @@
 		181879541FE27C3D009CD807 /* 自定义控件 */ = {
 			isa = PBXGroup;
 			children = (
-				18041C692015E4D300C9826B /* LEEAlertSwift */,
 				1818795A1FE27C9C009CD807 /* 自定义cell(一般用在设置界面) */,
 				181879591FE27C90009CD807 /* 自定义时间选择器 */,
 				181879581FE27C7D009CD807 /* 自定义导航条控制器(云音乐的效果) */,
@@ -287,26 +246,15 @@
 				181879661FE36AE3009CD807 /* HTUIViewExtension.swift in Sources */,
 				186A2848201084830058AF10 /* HTUIImageExtension.swift in Sources */,
 				181879681FE36FEE009CD807 /* HTUIScreenExtension.swift in Sources */,
-				1836835220231186008E4BC5 /* LEEAlertWindow.swift in Sources */,
-				18041C6B2015E52500C9826B /* LEEAlertSwiftHelper.swift in Sources */,
-				1836835820231C03008E4BC5 /* LEEActionSheetViewController.swift in Sources */,
 				1818795E1FE28BDD009CD807 /* TestViewController.swift in Sources */,
 				181879471FE27BFA009CD807 /* HTDevelopTool_Swift.xcdatamodeld in Sources */,
 				181879701FE793EE009CD807 /* HTTableViewExtension.swift in Sources */,
-				18041C732017375600C9826B /* LeeCustomView.swift in Sources */,
 				181879411FE27BFA009CD807 /* ViewController.swift in Sources */,
-				18041C6F2015ECA300C9826B /* LEEAction.swift in Sources */,
-				1836835420231B93008E4BC5 /* LEEBaseViewController.swift in Sources */,
-				18041C712015EE7600C9826B /* LEEItem.swift in Sources */,
-				1836834E20230A1A008E4BC5 /* LEEAlert.swift in Sources */,
-				1836835020230BF6008E4BC5 /* LEEAlertConfig.swift in Sources */,
 				181879741FE9EEA4009CD807 /* HTDatePickerSwift.swift in Sources */,
-				18041C6D2015E95000C9826B /* LEEAlertConfigModel.swift in Sources */,
 				181879641FE36342009CD807 /* HTDataExtension.swift in Sources */,
 				186D22F4204165A30017949C /* CustomView.swift in Sources */,
 				181879721FE7A67C009CD807 /* HTDateExtension.swift in Sources */,
 				181879621FE35F0D009CD807 /* HTStringExtension.swift in Sources */,
-				1836835620231BEE008E4BC5 /* LEEAlertViewController.swift in Sources */,
 				1818795C1FE27CE0009CD807 /* HTCustomNavController.swift in Sources */,
 				1818793F1FE27BFA009CD807 /* AppDelegate.swift in Sources */,
 				1818796B1FE3778A009CD807 /* HTScreenFitSwift.swift in Sources */,

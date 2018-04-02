@@ -21,6 +21,9 @@ class TestViewController: HTCustomNavController {
             print(t)
         }
     }
+    
+    
+    
     let btnOne = UIButton(type: .custom)
     let lableOne = UILabel(frame: CGRect(x: 14, y: 100, width: UIScreen.main.bounds.width - 28, height: 40))
     let testLableOne = UILabel(frame: CGRect(x: 14, y: 140, width: UIScreen.main.bounds.width - 28, height: 40))
@@ -49,6 +52,7 @@ class TestViewController: HTCustomNavController {
         super.viewDidLoad()
         self.titleColor = UIColor.red
         self.mainBgViewColor = UIColor.white
+        self.isHaveTabBar = true
         
         let scroll = UIScrollView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 64))
         scroll.backgroundColor = .white

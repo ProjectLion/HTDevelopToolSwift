@@ -20,7 +20,20 @@ class HTCustomNavController: UIViewController {
     
     // MARK: 公开给外部的自定义接口
     /// 该控制器的界面是否有tabBar(默认为没有)
-    open var isHaveTabBar: Bool = false
+    open var isHaveTabBar: Bool = false {
+        didSet{
+            /// 如果有tabBar,减去tabBar的高度
+            if isHaveTabBar {
+                if isIphoneX {
+                    BGView.ht_height = SCREEN_H - navHeight - 83
+                }else{
+                    BGView.ht_height = SCREEN_H - navHeight - 49
+                }
+            } else {
+                BGView.ht_height = SCREEN_H - navHeight
+            }
+        }
+    }
     
     /// 导航条颜色(默认为白色)
     open var navColor: UIColor = UIColor.white{
@@ -216,14 +229,6 @@ class HTCustomNavController: UIViewController {
     fileprivate func creatMainView(){
         BGView.frame = CGRect(x: 0, y: navHeight, width: SCREEN_W, height: SCREEN_H - navHeight)
         BGView.backgroundColor = mainBgViewColor
-        /// 如果有tabBar,减去tabBar的高度
-        if isHaveTabBar {
-            if isIphoneX {
-                BGView.ht_height = SCREEN_H - navHeight - 83
-            }else{
-                BGView.ht_height = SCREEN_H - navHeight - 49
-            }
-        }
         view.addSubview(BGView)
     }
     

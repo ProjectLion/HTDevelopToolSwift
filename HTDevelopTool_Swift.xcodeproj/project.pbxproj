@@ -26,6 +26,14 @@
 		186A2848201084830058AF10 /* HTUIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186A2847201084830058AF10 /* HTUIImageExtension.swift */; };
 		186D22F4204165A30017949C /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D22F3204165A30017949C /* CustomView.swift */; };
 		186D22F620416ACC0017949C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D22F520416ACC0017949C /* Model.swift */; };
+		8EA9EA3C207205CF00C9C706 /* HTLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9EA3A207205CF00C9C706 /* HTLabelExtension.swift */; };
+		8EA9EA3D207205CF00C9C706 /* HTUIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9EA3B207205CF00C9C706 /* HTUIButtonExtension.swift */; };
+		8ED569CA20A28AC3001B9A20 /* HTColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED569C920A28AC3001B9A20 /* HTColorExtension.swift */; };
+		8EEB163120BFEEB80055E118 /* HTImageWater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB162C20BFEEB80055E118 /* HTImageWater.swift */; };
+		8EEB163220BFEEB80055E118 /* HTShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB162E20BFEEB80055E118 /* HTShareManager.swift */; };
+		8EEB163320BFEEB80055E118 /* HTTapticEngineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB163020BFEEB80055E118 /* HTTapticEngineManager.swift */; };
+		8EEB163720BFF1650055E118 /* HTPrivatePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB163620BFF1650055E118 /* HTPrivatePermission.swift */; };
+		8EEB163A20BFF4F60055E118 /* HTUserGuideHighLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB163920BFF4F60055E118 /* HTUserGuideHighLightView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +58,14 @@
 		186A2847201084830058AF10 /* HTUIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTUIImageExtension.swift; sourceTree = "<group>"; };
 		186D22F3204165A30017949C /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		186D22F520416ACC0017949C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		8EA9EA3A207205CF00C9C706 /* HTLabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLabelExtension.swift; sourceTree = "<group>"; };
+		8EA9EA3B207205CF00C9C706 /* HTUIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTUIButtonExtension.swift; sourceTree = "<group>"; };
+		8ED569C920A28AC3001B9A20 /* HTColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTColorExtension.swift; sourceTree = "<group>"; };
+		8EEB162C20BFEEB80055E118 /* HTImageWater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTImageWater.swift; sourceTree = "<group>"; };
+		8EEB162E20BFEEB80055E118 /* HTShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTShareManager.swift; sourceTree = "<group>"; };
+		8EEB163020BFEEB80055E118 /* HTTapticEngineManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTapticEngineManager.swift; sourceTree = "<group>"; };
+		8EEB163620BFF1650055E118 /* HTPrivatePermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTPrivatePermission.swift; sourceTree = "<group>"; };
+		8EEB163920BFF4F60055E118 /* HTUserGuideHighLightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTUserGuideHighLightView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +126,8 @@
 		181879541FE27C3D009CD807 /* 自定义控件 */ = {
 			isa = PBXGroup;
 			children = (
-				1818795A1FE27C9C009CD807 /* 自定义cell(一般用在设置界面) */,
+				8EEB163820BFF4A20055E118 /* 新用户引导高亮 */,
+				8EEB163420BFF08E0055E118 /* 大图浏览 */,
 				181879591FE27C90009CD807 /* 自定义时间选择器 */,
 				181879581FE27C7D009CD807 /* 自定义导航条控制器(云音乐的效果) */,
 			);
@@ -120,6 +137,8 @@
 		181879551FE27C46009CD807 /* HTExtension */ = {
 			isa = PBXGroup;
 			children = (
+				8EA9EA3A207205CF00C9C706 /* HTLabelExtension.swift */,
+				8EA9EA3B207205CF00C9C706 /* HTUIButtonExtension.swift */,
 				181879611FE35F0D009CD807 /* HTStringExtension.swift */,
 				181879631FE36342009CD807 /* HTDataExtension.swift */,
 				181879711FE7A67C009CD807 /* HTDateExtension.swift */,
@@ -127,6 +146,7 @@
 				181879671FE36FEE009CD807 /* HTUIScreenExtension.swift */,
 				1818796F1FE793EE009CD807 /* HTTableViewExtension.swift */,
 				186A2847201084830058AF10 /* HTUIImageExtension.swift */,
+				8ED569C920A28AC3001B9A20 /* HTColorExtension.swift */,
 			);
 			path = HTExtension;
 			sourceTree = "<group>";
@@ -134,6 +154,10 @@
 		181879561FE27C65009CD807 /* OtherTools */ = {
 			isa = PBXGroup;
 			children = (
+				8EEB163520BFF1370055E118 /* 私有权限的获取 */,
+				8EEB162A20BFEEB80055E118 /* 给视频图片添加水印 */,
+				8EEB162D20BFEEB80055E118 /* 集成原生分享 */,
+				8EEB162F20BFEEB80055E118 /* Taptic Engine震动 */,
 				181879691FE3774B009CD807 /* 适配文件 */,
 			);
 			path = OtherTools;
@@ -155,19 +179,67 @@
 			path = "自定义时间选择器";
 			sourceTree = "<group>";
 		};
-		1818795A1FE27C9C009CD807 /* 自定义cell(一般用在设置界面) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "自定义cell(一般用在设置界面)";
-			sourceTree = "<group>";
-		};
 		181879691FE3774B009CD807 /* 适配文件 */ = {
 			isa = PBXGroup;
 			children = (
 				1818796A1FE3778A009CD807 /* HTScreenFitSwift.swift */,
 			);
 			path = "适配文件";
+			sourceTree = "<group>";
+		};
+		8EEB162A20BFEEB80055E118 /* 给视频图片添加水印 */ = {
+			isa = PBXGroup;
+			children = (
+				8EEB162B20BFEEB80055E118 /* 添加图片水印 */,
+			);
+			path = "给视频图片添加水印";
+			sourceTree = "<group>";
+		};
+		8EEB162B20BFEEB80055E118 /* 添加图片水印 */ = {
+			isa = PBXGroup;
+			children = (
+				8EEB162C20BFEEB80055E118 /* HTImageWater.swift */,
+			);
+			path = "添加图片水印";
+			sourceTree = "<group>";
+		};
+		8EEB162D20BFEEB80055E118 /* 集成原生分享 */ = {
+			isa = PBXGroup;
+			children = (
+				8EEB162E20BFEEB80055E118 /* HTShareManager.swift */,
+			);
+			path = "集成原生分享";
+			sourceTree = "<group>";
+		};
+		8EEB162F20BFEEB80055E118 /* Taptic Engine震动 */ = {
+			isa = PBXGroup;
+			children = (
+				8EEB163020BFEEB80055E118 /* HTTapticEngineManager.swift */,
+			);
+			path = "Taptic Engine震动";
+			sourceTree = "<group>";
+		};
+		8EEB163420BFF08E0055E118 /* 大图浏览 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "大图浏览";
+			sourceTree = "<group>";
+		};
+		8EEB163520BFF1370055E118 /* 私有权限的获取 */ = {
+			isa = PBXGroup;
+			children = (
+				8EEB163620BFF1650055E118 /* HTPrivatePermission.swift */,
+			);
+			path = "私有权限的获取";
+			sourceTree = "<group>";
+		};
+		8EEB163820BFF4A20055E118 /* 新用户引导高亮 */ = {
+			isa = PBXGroup;
+			children = (
+				8EEB163920BFF4F60055E118 /* HTUserGuideHighLightView.swift */,
+			);
+			path = "新用户引导高亮";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,12 +317,20 @@
 				186D22F620416ACC0017949C /* Model.swift in Sources */,
 				181879661FE36AE3009CD807 /* HTUIViewExtension.swift in Sources */,
 				186A2848201084830058AF10 /* HTUIImageExtension.swift in Sources */,
+				8EEB163120BFEEB80055E118 /* HTImageWater.swift in Sources */,
 				181879681FE36FEE009CD807 /* HTUIScreenExtension.swift in Sources */,
+				8EEB163A20BFF4F60055E118 /* HTUserGuideHighLightView.swift in Sources */,
+				8EEB163220BFEEB80055E118 /* HTShareManager.swift in Sources */,
 				1818795E1FE28BDD009CD807 /* TestViewController.swift in Sources */,
+				8EEB163720BFF1650055E118 /* HTPrivatePermission.swift in Sources */,
+				8ED569CA20A28AC3001B9A20 /* HTColorExtension.swift in Sources */,
+				8EA9EA3C207205CF00C9C706 /* HTLabelExtension.swift in Sources */,
 				181879471FE27BFA009CD807 /* HTDevelopTool_Swift.xcdatamodeld in Sources */,
+				8EA9EA3D207205CF00C9C706 /* HTUIButtonExtension.swift in Sources */,
 				181879701FE793EE009CD807 /* HTTableViewExtension.swift in Sources */,
 				181879411FE27BFA009CD807 /* ViewController.swift in Sources */,
 				181879741FE9EEA4009CD807 /* HTDatePickerSwift.swift in Sources */,
+				8EEB163320BFEEB80055E118 /* HTTapticEngineManager.swift in Sources */,
 				181879641FE36342009CD807 /* HTDataExtension.swift in Sources */,
 				186D22F4204165A30017949C /* CustomView.swift in Sources */,
 				181879721FE7A67C009CD807 /* HTDateExtension.swift in Sources */,
@@ -395,7 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BE6X57F66G;
+				DEVELOPMENT_TEAM = 85C366UKGF;
 				INFOPLIST_FILE = HTDevelopTool_Swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HT.HTDevelopTool-Swift";
@@ -410,7 +490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BE6X57F66G;
+				DEVELOPMENT_TEAM = 85C366UKGF;
 				INFOPLIST_FILE = HTDevelopTool_Swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HT.HTDevelopTool-Swift";

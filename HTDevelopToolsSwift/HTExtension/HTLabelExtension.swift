@@ -83,7 +83,9 @@ extension UILabel {
         self.layer.borderWidth = borderWith
         self.layer.borderColor = borderColor.cgColor
         self.layer.cornerRadius = cornerRadius
-        self.clipsToBounds = true
+        if cornerRadius > 0 {
+            self.clipsToBounds = true
+        }
     }
     
     /// 设置行数及对齐方式

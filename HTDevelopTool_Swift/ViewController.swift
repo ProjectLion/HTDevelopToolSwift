@@ -22,6 +22,8 @@ class ViewController: UIViewController, HTScrollTitleDelegate {
         print("HT------>DEBUG: index\(selectIndex)")
     }
     
+    var scrol: HTScrollTitleView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,28 +34,33 @@ class ViewController: UIViewController, HTScrollTitleDelegate {
         l
         .ht_set(text: 🐶, font: ht_fontW(CGFloat(😂)), textColor: ht_color(r: 0, g: 0, b: 0, alpha: 1))
         .ht_set(lines: 0, textAlignment: .center)
-        .ht_add(borderWith: 1, borderColor: .red, cornerRadius: 5)
         .ht_set(isFit: true)
+        .ht_add(borderWith: 1, borderColor: .red, cornerRadius: 5)
         .ht_end()
         view.addSubview(l)
         
         let btn = UIButton(x: 0, y: 100, width: 80, height: 50, style: .custom)
-        btn.ht_set(backGroundColor: .red, state: .normal)
+//        btn.ht_set(backGroundColor: .red, state: .normal)
+        btn.addTarget(self, action: #selector(test), for: .touchUpInside)
+        btn.ht_set(title: "测试", font: ht_fontW(10), color: .red, state: .normal)
+        btn.setImage(UIImage(named: "icon_discover_on"), for: .normal)
+        btn.ht_set(imgPointStyle: .top, spaceing: 100)
         view.addSubview(btn)
         
-        let config = HTScrollTitleConfig()
+        var config = HTScrollTitleConfig()
         config.titleColor = .red
         config.selectTitleColor = .green
         config.indicatorColor = .blue
         config.borderColor = .black
         config.currentIndex = 4
-//        config.animatedTimeValue = 0.6
         config.bottomLineColor = .darkGray
-        let scrol = HTScrollTitleView(frame: CGRect(x: 50, y: 200, width: SCREEN_W - 100, height: 50), titleArr: ["互动", "表演", "贴纸", "问我", "手", "铁血书生郭沫若", "从善如流马歇尔"], delegate: self, scrollTitleConfig: config)
+        scrol = HTScrollTitleView(frame: CGRect(x: 50, y: 200, width: SCREEN_W - 100, height: 50), titleArr: ["互动", "表演", "贴纸", "问我", "手", "铁血书生郭沫若", "从善如流马歇尔"], delegate: self, scrollTitleConfig: config)
         view.addSubview(scrol)
     }
     
-    
+    @objc func test() {
+        scrol.scrollTo(index: 5)
+    }
     
 }
 

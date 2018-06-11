@@ -72,22 +72,6 @@ extension UILabel {
         return self
     }
     
-    /// 添加边框、颜色及切圆角 (默认为灰色1.5宽的边框,圆角半径为5)
-    ///
-    /// - Parameters:
-    ///   - borderWith: 边框宽
-    ///   - borderColor: 边框颜色
-    ///   - cornerRadius: 圆角半径
-    open func ht_add(borderWith: CGFloat = 1.5, borderColor: UIColor = .gray, cornerRadius: CGFloat = 5) -> UILabel {
-        self.layer.borderWidth = borderWith
-        self.layer.borderColor = borderColor.cgColor
-        self.layer.cornerRadius = cornerRadius
-        if cornerRadius > 0 {
-            self.clipsToBounds = true
-        }
-        return self
-    }
-    
     /// 设置行数及对齐方式
     ///
     /// - Parameters:

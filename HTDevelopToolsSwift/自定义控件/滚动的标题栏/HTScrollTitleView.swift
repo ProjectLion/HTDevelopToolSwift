@@ -28,10 +28,9 @@ enum HTIndicatorFollowStyle {
     case end
 }
 
-class HTScrollTitleConfig: NSObject {
+struct HTScrollTitleConfig {
     
-    override init() {
-        super.init()
+    init() {
     }
     
     //MARK: ^^^^^^^^^^^^^^^ titleScrollView的属性 ^^^^^^^^^^^^^^^
@@ -359,9 +358,16 @@ extension HTScrollTitleView {
     
     /// 滚动标题到指定index
     open func scrollTo(index: Int) {
+        if index == selectIndex {
+            return
+        }
         let btn = btnArray[index]
-        btnArray[index].isSelected = true
+        tempBtn?.isSelected = false
+        btn.isSelected = true
         selectBtnToCenter(btn: btn)
+        changeIndicatorPositionTo(btn: btn)
+        tempBtn = btn
+        selectIndex = index
     }
     
     ///

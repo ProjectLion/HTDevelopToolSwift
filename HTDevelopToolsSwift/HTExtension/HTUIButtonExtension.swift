@@ -61,7 +61,7 @@ extension UIButton {
     ///
     /// - Parameters:
     ///   - imgPointStyle: 图片的位置风格
-    ///   - spaceing: 间距
+    ///   - spaceing: 间距(如果间距+图片大小+titleLabel大小 超过按钮本身大小,则自动缩小间距)
     public func ht_set(imgPointStyle: ButtonImagePoint, spaceing: CGFloat) {
         
         let imgH = self.imageView?.bounds.height
@@ -70,10 +70,27 @@ extension UIButton {
         let labelH = (self.titleLabel?.text as NSString?)?.size(withAttributes: [NSAttributedString.Key.font: self.titleLabel?.font as Any]).height
         let labelW = (self.titleLabel?.text as NSString?)?.size(withAttributes: [NSAttributedString.Key.font: self.titleLabel?.font as Any]).width
         
+        var tempSpace = spaceing
+        
+        switch imgPointStyle {
+        case .top, .bottom:
+            if imgH! + labelH! + spaceing > self.frame.size.height {
+                tempSpace = self.frame.size.height - imgH! - labelH!
+            }
+        case .left, .right:
+            if imgW! + labelW! + spaceing > self.frame.size.width {
+                tempSpace = self.frame.size.width - imgW! - labelW!
+            }
+        }
+        
+        if tempSpace < 0 {
+            tempSpace = 0
+        }
+        
         let imgOffsetX = (imgW! + labelW!) / 2 - imgW! / 2
         let imgOffsetY = (imgH! + labelH!) / 2 - imgH! / 2
-        let labelOffsetX = (imgW! + labelW!) / 2 - (imgW! + labelW!) / 2
-        let labelOffsetY = labelH! / 2 + spaceing / 2
+        let labelOffsetX = (imgW! + labelW!) / 2 - (labelW!) / 2
+        let labelOffsetY = (imgH! + labelH!) / 2 - labelH! / 2 + tempSpace
         
         switch imgPointStyle {
             
@@ -84,11 +101,11 @@ extension UIButton {
             self.imageEdgeInsets = UIEdgeInsets(top: imgOffsetY, left: imgOffsetX, bottom: -imgOffsetY, right: -imgOffsetX)
             self.titleEdgeInsets = UIEdgeInsets(top: -labelOffsetY, left: -labelOffsetX, bottom: labelOffsetY, right: labelOffsetX)
         case .left:
-            self.imageEdgeInsets = UIEdgeInsets(top: 0, left: -spaceing / 2, bottom: 0, right: spaceing / 2)
-            self.titleEdgeInsets = UIEdgeInsets(top: 0, left: spaceing / 2, bottom: 0, right: -spaceing / 2)
+            self.imageEdgeInsets = UIEdgeInsets(top: 0, left: -tempSpace / 2, bottom: 0, right: tempSpace / 2)
+            self.titleEdgeInsets = UIEdgeInsets(top: 0, left: tempSpace / 2, bottom: 0, right: -tempSpace / 2)
         case .right:
-            self.imageEdgeInsets = UIEdgeInsets(top: 0, left: labelW! + spaceing / 2, bottom: 0, right: -(labelW! + spaceing / 2))
-            self.titleEdgeInsets = UIEdgeInsets(top: 0, left: -(imgH! + spaceing / 2), bottom: 0, right: imgH! + spaceing / 2)
+            self.imageEdgeInsets = UIEdgeInsets(top: 0, left: labelW! + tempSpace / 2, bottom: 0, right: -(labelW! + tempSpace / 2))
+            self.titleEdgeInsets = UIEdgeInsets(top: 0, left: -(imgH! + tempSpace / 2), bottom: 0, right: imgH! + tempSpace / 2)
         }
         
     }

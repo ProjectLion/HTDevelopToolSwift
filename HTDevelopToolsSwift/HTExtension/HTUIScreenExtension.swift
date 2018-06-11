@@ -25,18 +25,7 @@ public extension UIScreen{
     static var ht_screenHeight: CGFloat {
         return UIScreen.main.bounds.height
     }
-//    /// 屏幕的size
-//    class func ht_screenSize() -> CGSize{
-//        return UIScreen.main.bounds.size
-//    }
-//    /// 屏幕的宽
-//    class func ht_screecWidth() -> CGFloat{
-//        return UIScreen.main.bounds.width
-//    }
-//    /// 屏幕的高
-//    class func ht_screenHeight() -> CGFloat{
-//        return UIScreen.main.bounds.height
-//    }
+    
     /// 适配后的宽(iPhone 6)
     class func ht_setWidth(width: CGFloat) -> CGFloat{
         return (width / 375.0) * UIScreen.ht_screecWidth

@@ -13,7 +13,6 @@ import UIKit
 extension UILabel {
     
     
-    
 }
 /// Method
 extension UILabel {
@@ -58,19 +57,19 @@ extension UILabel {
     ///   - text: 内容
     ///   - font: 字体
     ///   - textColor: 字体颜色
-    public func ht_set(text: String = "", font: UIFont = UIFont.systemFont(ofSize: 13), textColor: UIColor = .gray) {
+    open func ht_set(text: String = "", font: UIFont = UIFont.systemFont(ofSize: 13), textColor: UIColor = .gray) -> UILabel {
         self.text = text
         self.textColor = textColor
         self.font = font
+        return self
     }
     
     /// 是否自适应大小 (默认为true)
     ///
     /// - Parameter isFit: 布尔值
-    public func ht_set(isFit: Bool = true) {
-        if isFit {
-            self.sizeToFit()
-        }
+    open func ht_set(isFit: Bool = true) -> UILabel {
+        isFit ? self.sizeToFit() : nil
+        return self
     }
     
     /// 添加边框、颜色及切圆角 (默认为灰色1.5宽的边框,圆角半径为5)
@@ -79,13 +78,14 @@ extension UILabel {
     ///   - borderWith: 边框宽
     ///   - borderColor: 边框颜色
     ///   - cornerRadius: 圆角半径
-    public func ht_add(borderWith: CGFloat = 1.5, borderColor: UIColor = .gray, cornerRadius: CGFloat = 5) {
+    open func ht_add(borderWith: CGFloat = 1.5, borderColor: UIColor = .gray, cornerRadius: CGFloat = 5) -> UILabel {
         self.layer.borderWidth = borderWith
         self.layer.borderColor = borderColor.cgColor
         self.layer.cornerRadius = cornerRadius
         if cornerRadius > 0 {
             self.clipsToBounds = true
         }
+        return self
     }
     
     /// 设置行数及对齐方式
@@ -93,9 +93,10 @@ extension UILabel {
     /// - Parameters:
     ///   - lines: 行数
     ///   - textAlignment: 对齐方式
-    public func ht_set(lines: Int, textAlignment: NSTextAlignment) {
+    open func ht_set(lines: Int, textAlignment: NSTextAlignment) -> UILabel {
         self.numberOfLines = lines
         self.textAlignment = textAlignment
+        return self
     }
     
     /// 设置富文本
@@ -106,11 +107,13 @@ extension UILabel {
     ///   - attributedValue: 富文本的value值
     ///   - location: 开始位置
     ///   - length: 长度
-    public func ht_set(attributedText: String, attributedName: NSAttributedStringKey, attributedValue: Any, location: Int, length: Int) {
+    open func ht_set(attributedText: String, attributedName: NSAttributedString.Key, attributedValue: Any, location: Int, length: Int) -> UILabel {
         let attriStr = NSMutableAttributedString(string: attributedText)
         attriStr.addAttributes([attributedName: attributedValue], range: NSRange(location: location, length: length))
         self.attributedText = attriStr
+        return self
     }
+    
 }
 
 

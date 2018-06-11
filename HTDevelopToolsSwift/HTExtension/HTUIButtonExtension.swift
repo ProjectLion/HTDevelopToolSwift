@@ -36,7 +36,7 @@ extension UIButton {
     ///   - y: y
     ///   - width: 宽
     ///   - height: 高
-    convenience init(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, style: UIButtonType){
+    convenience init(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, style: UIButton.ButtonType){
         self.init(type: style)
         self.frame = CGRect(x: x, y: y, width: width, height: height)
     }
@@ -51,7 +51,7 @@ extension UIButton {
     ///   - height: 高
     ///   - style: 按钮类型
     /// - Returns: 按钮
-    class func ht_init(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, style: UIButtonType) -> UIButton{
+    class func ht_init(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, style: UIButton.ButtonType) -> UIButton{
         let btn = UIButton(type: style)
         btn.frame = CGRect(x: x, y: y, width: width, height: height)
         return btn
@@ -67,8 +67,8 @@ extension UIButton {
         let imgH = self.imageView?.bounds.height
         let imgW = self.imageView?.bounds.width
         
-        let labelH = (self.titleLabel?.text as NSString?)?.size(withAttributes: [NSAttributedStringKey.font: self.titleLabel?.font as Any]).height
-        let labelW = (self.titleLabel?.text as NSString?)?.size(withAttributes: [NSAttributedStringKey.font: self.titleLabel?.font as Any]).width
+        let labelH = (self.titleLabel?.text as NSString?)?.size(withAttributes: [NSAttributedString.Key.font: self.titleLabel?.font as Any]).height
+        let labelW = (self.titleLabel?.text as NSString?)?.size(withAttributes: [NSAttributedString.Key.font: self.titleLabel?.font as Any]).width
         
         let imgOffsetX = (imgW! + labelW!) / 2 - imgW! / 2
         let imgOffsetY = (imgH! + labelH!) / 2 - imgH! / 2
@@ -78,17 +78,17 @@ extension UIButton {
         switch imgPointStyle {
             
         case .top:
-            self.imageEdgeInsets = UIEdgeInsetsMake(-imgOffsetY, imgOffsetX, imgOffsetY, -imgOffsetX)
-            self.titleEdgeInsets = UIEdgeInsetsMake(labelOffsetY, -labelOffsetX, -labelOffsetY, labelOffsetX)
+            self.imageEdgeInsets = UIEdgeInsets(top: -imgOffsetY, left: imgOffsetX, bottom: imgOffsetY, right: -imgOffsetX)
+            self.titleEdgeInsets = UIEdgeInsets(top: labelOffsetY, left: -labelOffsetX, bottom: -labelOffsetY, right: labelOffsetX)
         case .bottom:
-            self.imageEdgeInsets = UIEdgeInsetsMake(imgOffsetY, imgOffsetX, -imgOffsetY, -imgOffsetX)
-            self.titleEdgeInsets = UIEdgeInsetsMake(-labelOffsetY, -labelOffsetX, labelOffsetY, labelOffsetX)
+            self.imageEdgeInsets = UIEdgeInsets(top: imgOffsetY, left: imgOffsetX, bottom: -imgOffsetY, right: -imgOffsetX)
+            self.titleEdgeInsets = UIEdgeInsets(top: -labelOffsetY, left: -labelOffsetX, bottom: labelOffsetY, right: labelOffsetX)
         case .left:
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, -spaceing / 2, 0, spaceing / 2)
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, spaceing / 2, 0, -spaceing / 2)
+            self.imageEdgeInsets = UIEdgeInsets(top: 0, left: -spaceing / 2, bottom: 0, right: spaceing / 2)
+            self.titleEdgeInsets = UIEdgeInsets(top: 0, left: spaceing / 2, bottom: 0, right: -spaceing / 2)
         case .right:
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, labelW! + spaceing / 2, 0, -(labelW! + spaceing / 2))
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imgH! + spaceing / 2), 0, imgH! + spaceing / 2)
+            self.imageEdgeInsets = UIEdgeInsets(top: 0, left: labelW! + spaceing / 2, bottom: 0, right: -(labelW! + spaceing / 2))
+            self.titleEdgeInsets = UIEdgeInsets(top: 0, left: -(imgH! + spaceing / 2), bottom: 0, right: imgH! + spaceing / 2)
         }
         
     }
@@ -100,7 +100,7 @@ extension UIButton {
     ///   - font: 字体
     ///   - color: 字体色
     ///   - state: 状态
-    public func ht_set(title: String, font: UIFont, color: UIColor, state: UIControlState) {
+    public func ht_set(title: String, font: UIFont, color: UIColor, state: UIControl.State) {
         
         self.setTitle(title, for: state)
         self.setTitleColor(color, for: state)
@@ -113,16 +113,16 @@ extension UIButton {
     /// - Parameters:
     ///   - backGroundColor: 背景色
     ///   - state: 状态
-    public func ht_set(backGroundColor: UIColor, state: UIControlState) {
+    public func ht_set(backGroundColor: UIColor, state: UIControl.State) {
         
-        let rect = CGRect(x: 0, y: 0, width: 0, height: 0)
+        let rect = CGRect(x: 0, y: 0, width: 1.0, height: 1.0)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
         context?.setFillColor(backGroundColor.cgColor)
-        context?.addRect(rect)
+        context?.fill(rect)
         let img = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        self.setImage(img, for: state)
+        self.setBackgroundImage(img, for: state)
     }
     
 }

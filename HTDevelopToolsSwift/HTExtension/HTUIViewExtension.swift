@@ -100,7 +100,7 @@ extension UIView {
             return self.center.x
         }
         set{
-            self.center = CGPoint(x: newValue, y: ht_centerY)
+            self.center.x = newValue
         }
     }
     /// view的Y轴中心
@@ -109,7 +109,7 @@ extension UIView {
             return self.center.y
         }
         set{
-            return self.center = CGPoint(x: ht_centerX, y: newValue)
+            self.center.y = newValue
         }
     }
 }
@@ -130,6 +130,11 @@ extension UIView {
     convenience init(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, backGroundColor: UIColor = .white){
         self.init(frame: CGRect(x: x, y: y, width: width, height: height))
         self.backgroundColor = backGroundColor
+    }
+    
+    /// 收尾
+    open func ht_end() -> Void {
+        return
     }
     
 }

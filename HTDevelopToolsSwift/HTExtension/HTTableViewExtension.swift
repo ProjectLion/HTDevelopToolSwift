@@ -21,7 +21,7 @@ extension UITableView{
     ///   - w: w
     ///   - h: h
     ///   - style: tableStyle
-    convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, style: UITableViewStyle = .plain) {
+    convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, style: UITableView.Style = .plain) {
         self.init(frame: CGRect(x: x, y: y, width: w, height: h), style: style)
     }
     
@@ -34,7 +34,7 @@ extension UITableView{
     ///   - h: h
     ///   - style: tableStyle
     /// - Returns: tableView
-    class func ht_init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, style: UITableViewStyle = .plain) -> UITableView{
+    class func ht_init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, style: UITableView.Style = .plain) -> UITableView{
         let table: UITableView?
         
         if isIphoneX {
@@ -62,7 +62,7 @@ extension UITableView{
     ///   - style: 分割线风格(系统)  (默认为.none)
     ///   - separatorColor: 分割线颜色   (默认为黑色)
     ///   - backGroundColor: table的背景色  (默认白色)
-    public func ht_set(separatorStyle: UITableViewCellSeparatorStyle = .none, separatorColor: UIColor = .black, backGroundColor: UIColor = .white){
+    public func ht_set(separatorStyle: UITableViewCell.SeparatorStyle = .none, separatorColor: UIColor = .black, backGroundColor: UIColor = .white){
         self.backgroundColor = backGroundColor
         if separatorStyle == .none {
             return

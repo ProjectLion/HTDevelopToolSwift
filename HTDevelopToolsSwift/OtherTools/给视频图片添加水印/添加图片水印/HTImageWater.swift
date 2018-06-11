@@ -57,7 +57,7 @@ class HTImageWater: NSObject {
         UIGraphicsEndImageContext()
         guard let p = path else { return returnImg! }
         do {
-            try UIImagePNGRepresentation(returnImg!)?.write(to: URL(fileURLWithPath: p))
+            try returnImg!.pngData()?.write(to: URL(fileURLWithPath: p))
             return UIImage(contentsOfFile: p)
         } catch  {
             print("HT------>DEBUG: 写入文件失败")
@@ -76,8 +76,8 @@ class HTImageWater: NSObject {
         
         let opts = [AVURLAssetPreferPreciseDurationAndTimingKey: true]
         videoAsset = AVURLAsset(url: URL(fileURLWithPath: path), options: opts)     //初始化视频媒体文件
-        let startTime = CMTimeMakeWithSeconds(0.0, 600)    //2
-        let endTime = CMTimeMakeWithSeconds(CMTimeGetSeconds((videoAsset?.duration)!), (videoAsset?.duration.timescale)!)
+        let startTime = CMTime(seconds: 0.0, preferredTimescale: 600)    //2
+        let endTime = CMTime(seconds: (videoAsset?.duration)!.getSeconds(), preferredTimescale: (videoAsset?.duration.timescale)!)
         //声音采集
         let audioAsset = AVURLAsset(url: URL(fileURLWithPath: path), options: opts)
         //2 创建AVMutableComposition实例. apple developer 里边的解释 【AVMutableComposition is a mutable subclass of AVComposition you use when you want to create a new composition from existing assets. You can add and remove tracks, and you can add, remove, and scale time ranges.】
@@ -86,7 +86,7 @@ class HTImageWater: NSObject {
         let videoTrack = mixComposition.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid)
         //把视频轨道数据加入到可变轨道中 这部分可以做视频裁剪TimeRange
         do {
-            try videoTrack?.insertTimeRange(CMTimeRange(start: startTime, duration: endTime), of: (videoAsset?.tracks(withMediaType: .video).first)!, at: kCMTimeZero)
+            try videoTrack?.insertTimeRange(CMTimeRange(start: startTime, duration: endTime), of: (videoAsset?.tracks(withMediaType: .video).first)!, at: CMTime.zero)
         } catch {
             
         }
@@ -96,14 +96,14 @@ class HTImageWater: NSObject {
         //音频采集通道
         let audioAssetTrack = audioAsset.tracks(withMediaType: .audio).first!
         do {
-            try audioTrack?.insertTimeRange(CMTimeRange(start: startTime, duration: endTime), of: audioAssetTrack, at: kCMTimeZero)
+            try audioTrack?.insertTimeRange(CMTimeRange(start: startTime, duration: endTime), of: audioAssetTrack, at: CMTime.zero)
         } catch {
             
         }
         
         //3.1 AVMutableVideoCompositionInstruction 视频轨道中的一个视频，可以缩放、旋转等
         let mainInstruction = AVMutableVideoCompositionInstruction()
-        mainInstruction.timeRange = CMTimeRangeMake(kCMTimeZero, (videoTrack?.timeRange.duration)!)
+        mainInstruction.timeRange = CMTimeRange(start: CMTime.zero, duration: (videoTrack?.timeRange.duration)!)
         
         // 3.2 AVMutableVideoCompositionLayerInstruction 一个视频轨道，包含了这个轨道上的所有视频素材
         let videolayerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack!)
@@ -125,7 +125,7 @@ class HTImageWater: NSObject {
         //    if (videoTransform.a == -1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == -1.0) {
         //        videoAssetOrientation_ = UIImageOrientationDown;
         //    }
-        videolayerInstruction.setTransform((videoAssetTrack?.preferredTransform)!, at: kCMTimeZero)
+        videolayerInstruction.setTransform((videoAssetTrack?.preferredTransform)!, at: CMTime.zero)
         videolayerInstruction.setOpacity(0.0, at: endTime)
         // 3.3 - Add instructions
         mainInstruction.layerInstructions = [videolayerInstruction]
@@ -144,7 +144,7 @@ class HTImageWater: NSObject {
         renderHeight = naturalSize.height
         mainCompositionInst.renderSize = CGSize(width: renderWidth, height: renderHeight)
         mainCompositionInst.instructions = [mainInstruction]
-        mainCompositionInst.frameDuration = CMTimeMake(1, 25)
+        mainCompositionInst.frameDuration = CMTime(value: 1, timescale: 25)
         
         applyVideoEffectTo(composition: mainCompositionInst, waterImg: waterImage, size: CGSize(width: renderWidth, height: renderHeight))
         
@@ -163,7 +163,7 @@ class HTImageWater: NSObject {
         exporter?.videoComposition = mainCompositionInst
         
         exporter?.exportAsynchronously(completionHandler: {
-            print("HT------>DEBUG: 视频导出状态++++++++++++====\(self.exporter?.status)")
+//            print("HT------>DEBUG: 视频导出状态++++++++++++====\(self.exporter?.status)")
             DispatchQueue.main.async {
                 complete(path)
             }
@@ -172,9 +172,9 @@ class HTImageWater: NSObject {
     }
     
     @objc private func displayLinkAction() {
-        print("HT------>DEBUG: progress: ====== \(exporter?.progress)")
+//        print("HT------>DEBUG: progress: ====== \(exporter?.progress)")
         if ((exporter?.progress)! >= 1.0) {
-            print("HT------>DEBUG: 文件输出完成1111111")
+//            print("HT------>DEBUG: 文件输出完成1111111")
         }
     }
     
@@ -182,7 +182,7 @@ class HTImageWater: NSObject {
         // 水印layer
         let overlayLayer = CALayer()
         overlayLayer.contents = waterImg.cgImage
-        overlayLayer.frame = CGRect(x: 0, y: 0, width: WaterMarkRect.size.width, height: WaterMarkRect.size.height)
+        overlayLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         overlayLayer.masksToBounds = true
         
         

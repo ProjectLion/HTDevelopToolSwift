@@ -17,10 +17,10 @@ extension UIImage {
     /// - Parameter image: 需要转的图片
     /// - Returns: data
     func ht_transformToData() -> Data{
-        if UIImagePNGRepresentation(self) != nil {
-            return UIImageJPEGRepresentation(self, 1)!
+        if self.pngData() != nil {
+            return self.jpegData(compressionQuality: 1)!
         }else{
-            return UIImageJPEGRepresentation(self, 0.01)!
+            return self.jpegData(compressionQuality: 0.01)!
         }
     }
     
@@ -40,16 +40,10 @@ extension UIImage {
     ///
     /// - Returns: 压缩后的图片
     func ht_imageCut() -> UIImage{
-        
-//        if UIImagePNGRepresentation(self) != nil {
-//            return self.ht_getImageWith(data: UIImagePNGRepresentation(self)!)!
-//        }else{
-//            return self.ht_getImageWith(data: UIImageJPEGRepresentation(self, 0.01)!)!
-//        }
-        guard UIImagePNGRepresentation(self) != nil else {
-            return self.ht_getImageWith(data: UIImageJPEGRepresentation(self, 0.01)!)!
+        guard self.pngData() != nil else {
+            return self.ht_getImageWith(data: self.jpegData(compressionQuality: 0.1)!)!
         }
-        return self.ht_getImageWith(data: UIImagePNGRepresentation(self)!)!
+        return self.ht_getImageWith(data: self.pngData()!)!
     }
     
 }

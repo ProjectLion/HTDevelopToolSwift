@@ -8,7 +8,7 @@
 
 import UIKit
 
-open enum HTUserGuideStyle {
+public enum HTUserGuideStyle {
     /// 正方形
     case square
     /// 长方形
@@ -30,11 +30,11 @@ class HTUserGuideHighLightView: UIView {
         }
     }
     /// 高亮部分的风格
-    open var style: HTUserGuideStyle {
-        didSet {
-            
-        }
-    }
+//    open var style: HTUserGuideStyle {
+//        didSet {
+//
+//        }
+//    }
     
     
     private var selfStyle: HTUserGuideStyle = .rectangle
@@ -46,6 +46,10 @@ class HTUserGuideHighLightView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     /*

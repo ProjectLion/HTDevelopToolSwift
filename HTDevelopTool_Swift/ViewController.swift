@@ -59,7 +59,7 @@ class ViewController: UIViewController, HTScrollTitleDelegate {
     }
     
     @objc func test() {
-        scrol.scrollTo(index: 5)
+        
     }
     
 }

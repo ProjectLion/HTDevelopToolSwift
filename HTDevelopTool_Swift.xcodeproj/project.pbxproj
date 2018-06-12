@@ -14,7 +14,6 @@
 		181879491FE27BFA009CD807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181879481FE27BFA009CD807 /* Assets.xcassets */; };
 		1818794C1FE27BFA009CD807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1818794A1FE27BFA009CD807 /* LaunchScreen.storyboard */; };
 		1818795C1FE27CE0009CD807 /* HTCustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818795B1FE27CE0009CD807 /* HTCustomNavController.swift */; };
-		1818795E1FE28BDD009CD807 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818795D1FE28BDD009CD807 /* TestViewController.swift */; };
 		181879621FE35F0D009CD807 /* HTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181879611FE35F0D009CD807 /* HTStringExtension.swift */; };
 		181879641FE36342009CD807 /* HTDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181879631FE36342009CD807 /* HTDataExtension.swift */; };
 		181879661FE36AE3009CD807 /* HTUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181879651FE36AE3009CD807 /* HTUIViewExtension.swift */; };
@@ -24,10 +23,9 @@
 		181879721FE7A67C009CD807 /* HTDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181879711FE7A67C009CD807 /* HTDateExtension.swift */; };
 		181879741FE9EEA4009CD807 /* HTDatePickerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181879731FE9EEA4009CD807 /* HTDatePickerSwift.swift */; };
 		186A2848201084830058AF10 /* HTUIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186A2847201084830058AF10 /* HTUIImageExtension.swift */; };
-		186D22F4204165A30017949C /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D22F3204165A30017949C /* CustomView.swift */; };
 		186D22F620416ACC0017949C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D22F520416ACC0017949C /* Model.swift */; };
-		8E40F68A20CE5D0E0076A200 /* 🐶.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40F68920CE5D0E0076A200 /* 🐶.swift */; };
 		8E51F56320C66F61007AE705 /* HTScrollTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51F56220C66F61007AE705 /* HTScrollTitleView.swift */; };
+		8E86D1FA20CF68A800995D42 /* TestStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86D1F920CF68A800995D42 /* TestStruct.swift */; };
 		8EA9EA3C207205CF00C9C706 /* HTLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9EA3A207205CF00C9C706 /* HTLabelExtension.swift */; };
 		8EA9EA3D207205CF00C9C706 /* HTUIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9EA3B207205CF00C9C706 /* HTUIButtonExtension.swift */; };
 		8EEB163120BFEEB80055E118 /* HTImageWater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB162C20BFEEB80055E118 /* HTImageWater.swift */; };
@@ -47,7 +45,6 @@
 		1818794B1FE27BFA009CD807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1818794D1FE27BFA009CD807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1818795B1FE27CE0009CD807 /* HTCustomNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCustomNavController.swift; sourceTree = "<group>"; };
-		1818795D1FE28BDD009CD807 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		181879611FE35F0D009CD807 /* HTStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTStringExtension.swift; sourceTree = "<group>"; };
 		181879631FE36342009CD807 /* HTDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTDataExtension.swift; sourceTree = "<group>"; };
 		181879651FE36AE3009CD807 /* HTUIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTUIViewExtension.swift; sourceTree = "<group>"; };
@@ -57,10 +54,9 @@
 		181879711FE7A67C009CD807 /* HTDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTDateExtension.swift; sourceTree = "<group>"; };
 		181879731FE9EEA4009CD807 /* HTDatePickerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTDatePickerSwift.swift; sourceTree = "<group>"; };
 		186A2847201084830058AF10 /* HTUIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTUIImageExtension.swift; sourceTree = "<group>"; };
-		186D22F3204165A30017949C /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		186D22F520416ACC0017949C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		8E40F68920CE5D0E0076A200 /* 🐶.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🐶.swift"; sourceTree = "<group>"; };
 		8E51F56220C66F61007AE705 /* HTScrollTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTScrollTitleView.swift; sourceTree = "<group>"; };
+		8E86D1F920CF68A800995D42 /* TestStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStruct.swift; sourceTree = "<group>"; };
 		8EA9EA3A207205CF00C9C706 /* HTLabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLabelExtension.swift; sourceTree = "<group>"; };
 		8EA9EA3B207205CF00C9C706 /* HTUIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTUIButtonExtension.swift; sourceTree = "<group>"; };
 		8EEB162C20BFEEB80055E118 /* HTImageWater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTImageWater.swift; sourceTree = "<group>"; };
@@ -101,17 +97,15 @@
 		1818793D1FE27BFA009CD807 /* HTDevelopTool_Swift */ = {
 			isa = PBXGroup;
 			children = (
+				8E86D1F920CF68A800995D42 /* TestStruct.swift */,
 				1818793E1FE27BFA009CD807 /* AppDelegate.swift */,
 				181879401FE27BFA009CD807 /* ViewController.swift */,
-				1818795D1FE28BDD009CD807 /* TestViewController.swift */,
-				186D22F3204165A30017949C /* CustomView.swift */,
 				186D22F520416ACC0017949C /* Model.swift */,
 				181879421FE27BFA009CD807 /* Main.storyboard */,
 				181879481FE27BFA009CD807 /* Assets.xcassets */,
 				1818794A1FE27BFA009CD807 /* LaunchScreen.storyboard */,
 				1818794D1FE27BFA009CD807 /* Info.plist */,
 				181879451FE27BFA009CD807 /* HTDevelopTool_Swift.xcdatamodeld */,
-				8E40F68920CE5D0E0076A200 /* 🐶.swift */,
 			);
 			path = HTDevelopTool_Swift;
 			sourceTree = "<group>";
@@ -330,20 +324,18 @@
 				186A2848201084830058AF10 /* HTUIImageExtension.swift in Sources */,
 				8EEB163120BFEEB80055E118 /* HTImageWater.swift in Sources */,
 				181879681FE36FEE009CD807 /* HTUIScreenExtension.swift in Sources */,
-				8E40F68A20CE5D0E0076A200 /* 🐶.swift in Sources */,
 				8EEB163A20BFF4F60055E118 /* HTUserGuideHighLightView.swift in Sources */,
 				8EEB163220BFEEB80055E118 /* HTShareManager.swift in Sources */,
-				1818795E1FE28BDD009CD807 /* TestViewController.swift in Sources */,
 				8EEB163720BFF1650055E118 /* HTPrivatePermission.swift in Sources */,
 				8EA9EA3C207205CF00C9C706 /* HTLabelExtension.swift in Sources */,
 				181879471FE27BFA009CD807 /* HTDevelopTool_Swift.xcdatamodeld in Sources */,
 				8EA9EA3D207205CF00C9C706 /* HTUIButtonExtension.swift in Sources */,
+				8E86D1FA20CF68A800995D42 /* TestStruct.swift in Sources */,
 				181879701FE793EE009CD807 /* HTTableViewExtension.swift in Sources */,
 				181879411FE27BFA009CD807 /* ViewController.swift in Sources */,
 				181879741FE9EEA4009CD807 /* HTDatePickerSwift.swift in Sources */,
 				8EEB163320BFEEB80055E118 /* HTTapticEngineManager.swift in Sources */,
 				181879641FE36342009CD807 /* HTDataExtension.swift in Sources */,
-				186D22F4204165A30017949C /* CustomView.swift in Sources */,
 				181879721FE7A67C009CD807 /* HTDateExtension.swift in Sources */,
 				181879621FE35F0D009CD807 /* HTStringExtension.swift in Sources */,
 				1818795C1FE27CE0009CD807 /* HTCustomNavController.swift in Sources */,

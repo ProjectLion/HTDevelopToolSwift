@@ -152,6 +152,23 @@ extension UIView {
         }
         return self
     }
+    
+    /// 对当前view截图
+    ///
+    /// - Returns: 返回UIImage or nil
+    open func shot() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
+        
+        if self.responds(to: #selector(drawHierarchy(in:afterScreenUpdates:))) {
+            self.drawHierarchy(in: self.bounds, afterScreenUpdates: false)
+        } else {
+            self.layer.render(in: UIGraphicsGetCurrentContext()!)
+        }
+        
+        let shotImg = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return shotImg
+    }
 }
 
 

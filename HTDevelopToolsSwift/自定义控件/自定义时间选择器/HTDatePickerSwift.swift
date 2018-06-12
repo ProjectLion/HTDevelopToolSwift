@@ -12,21 +12,21 @@ fileprivate let screen_w = UIScreen.main.bounds.width
 fileprivate let screen_h = UIScreen.main.bounds.height
 
 
-enum HTDatePickerStyle {
-    case Y                      //年
-    case YM                     //年月
-    case YMD                    //年月日
-    case YMDH                   //年月日 时
-    case YMDHM                  //年月日 时分
-    case YMDHMS                 //年月日 时分秒
-}
-
 protocol HTDatePickerDelegate {
     
     func clickEnsure(selectDate: String)
 }
 
 class HTDatePickerSwift: UIView {
+    
+    enum HTDatePickerStyle {
+        case Y                      //年
+        case YM                     //年月
+        case YMD                    //年月日
+        case YMDH                   //年月日 时
+        case YMDHM                  //年月日 时分
+        case YMDHMS                 //年月日 时分秒
+    }
     
     /***************公开给外部自定义控件的接口***************/
     

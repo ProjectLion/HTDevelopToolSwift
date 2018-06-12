@@ -8,29 +8,29 @@
 
 import UIKit
 
-/// 指示器样式
-enum HTIndicatorStyle {
-    /// 下划线
-    case bottomLine
-    /// 遮盖
-    case cover
-    /// 固定
-    case fix
-}
-
-/// 指示器滑动的样式
-enum HTIndicatorFollowStyle {
-    /// 跟随改变
-    case follow
-    /// 滑到一半时改变
-    case half
-    /// 滑动完成时改变
-    case end
-}
-
 struct HTScrollTitleConfig {
     
     init() {
+    }
+    
+    /// 指示器滑动的样式
+    public enum IndicatorFollowStyle {
+        /// 跟随改变
+        case follow
+        /// 滑到一半时改变
+        case half
+        /// 滑动完成时改变
+        case end
+    }
+    
+    /// 指示器样式
+    public enum IndicatorStyle {
+        /// 下划线
+        case bottomLine
+        /// 遮盖
+        case cover
+        /// 固定
+        case fix
     }
     
     //MARK: ^^^^^^^^^^^^^^^ titleScrollView的属性 ^^^^^^^^^^^^^^^
@@ -71,7 +71,7 @@ struct HTScrollTitleConfig {
     /// 指示器动画的时长 默认0.4 (0 ~ 1)
     public var animatedTimeValue = 0.4
     /// 指示器的样式 默认为下划线
-    public var indicatorStyle: HTIndicatorStyle = .bottomLine
+    public var indicatorStyle: HTScrollTitleConfig.IndicatorStyle = .bottomLine
     /// 指示器的圆角大小 默认为0 (indicatorStyle为cover时生效)
     public var indicatorCorner: CGFloat = 0
     /// 遮盖样式下的边框宽度 默认1
@@ -79,7 +79,7 @@ struct HTScrollTitleConfig {
     /// 遮盖样式下的边框颜色 默认白色
     public var borderColor = UIColor.white
     /// 指示器滚动样式 默认为follow
-    public var indicatorFollowStyle: HTIndicatorFollowStyle = .follow
+    public var indicatorFollowStyle: HTScrollTitleConfig.IndicatorFollowStyle = .follow
 }
 
 

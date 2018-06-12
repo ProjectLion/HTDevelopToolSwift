@@ -148,6 +148,9 @@ class HTImageWater: NSObject {
         
         applyVideoEffectTo(composition: mainCompositionInst, waterImg: waterImage, size: CGSize(width: renderWidth, height: renderHeight))
         
+        unlink((path as NSString).utf8String!)
+        path.utf8.description
+        
         // 后续视频输出
         dlink = CADisplayLink(target: self, selector: #selector(displayLinkAction))
         //    [dlink setFrameInterval:15];

@@ -27,6 +27,8 @@ class ViewController: UIViewController, HTScrollTitleDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        view.backgroundColor = .green
+        
         let 🐶 = "🐶"
         let 😂 = 13
         
@@ -56,10 +58,15 @@ class ViewController: UIViewController, HTScrollTitleDelegate {
         config.bottomLineColor = .darkGray
         scrol = HTScrollTitleView(frame: CGRect(x: 50, y: 200, width: SCREEN_W - 100, height: 50), titleArr: ["互动", "表演", "贴纸", "问我", "手", "铁血书生郭沫若", "从善如流马歇尔"], delegate: self, scrollTitleConfig: config)
         view.addSubview(scrol)
+        
+        let loading = MGLoadView(frame: CGRect(x: 50, y: 400, width: 150, height: 150))
+        view.addSubview(loading)
     }
     
     @objc func test() {
-        
+        ht_print(message: "string")
+        HTHUD.showProgress(animated: true)
+        let mod = Model.Model_Struct.Model_Struct_1.Model_Struct_2.init(cc: 5)
     }
     
 }

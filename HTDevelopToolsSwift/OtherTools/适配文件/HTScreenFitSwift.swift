@@ -52,17 +52,4 @@ public func ht_fontW(_ w:CGFloat) -> UIFont{
 public func ht_fontH(_ h:CGFloat) -> UIFont{
     return UIFont.systemFont(ofSize: ht_H(h))
 }
-/// 使用RGB数值初始化一个颜色
-public func ht_color(r: CGFloat, g: CGFloat, b: CGFloat, alpha: CGFloat) -> UIColor{
-    return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: alpha)
-}
-/// 将十六进制转为UIColor
-public func ht_colorWith(hexValue: Int) -> UIColor{
-    
-    return UIColor(red: ((CGFloat)((hexValue & 0xFF0000) >> 16)) / 255.0,
-                           green: ((CGFloat)((hexValue & 0xFF00) >> 8)) / 255.0,
-                           blue: ((CGFloat)(hexValue & 0xFF)) / 255.0,
-                           alpha: 1.0)
-}
-
 

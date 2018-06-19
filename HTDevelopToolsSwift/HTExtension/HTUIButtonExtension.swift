@@ -131,7 +131,7 @@ extension UIButton {
     ///   - backGroundColor: 背景色
     ///   - state: 状态
     public func ht_set(backGroundColor: UIColor, state: UIControl.State) {
-        
+        self.adjustsImageWhenHighlighted = false
         let rect = CGRect(x: 0, y: 0, width: 1.0, height: 1.0)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()

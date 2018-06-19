@@ -32,7 +32,7 @@ public extension UIScreen{
     }
     /// 适配后的高(iPhone 6)
     class func ht_setHeight(height: CGFloat) -> CGFloat{
-        return (height / 667.0) * UIScreen.ht_screenHeight
+        return (height / 667.0) * (isIphoneX ? 667.0 : UIScreen.ht_screenHeight)
     }
 }
 

@@ -47,4 +47,16 @@ class Model: NSObject {
             print("HT------>DEBUG: isDownload已经变成\(isDownload)")
         }
     }
+    
+    struct Model_Struct {
+        var ddd: String {
+            return "2"
+        }
+        struct Model_Struct_1 {
+            var aa: String = "1"
+            struct Model_Struct_2 {
+                var cc: Int = 2
+            }
+        }
+    }
 }

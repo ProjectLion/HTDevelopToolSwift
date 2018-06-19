@@ -164,7 +164,6 @@ extension UIView {
         } else {
             self.layer.render(in: UIGraphicsGetCurrentContext()!)
         }
-        
         let shotImg = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return shotImg

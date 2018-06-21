@@ -7,16 +7,17 @@
 //
 
 import UIKit
-/// 自定义导航条的风格
-//enum HTCustomNavStyle: UInt {
-//    case Title = 0                  //只有title
-//    case BackTile                   //包含返回按钮 & title
-//    case BackTitleRightTitle        //包含返回按钮 & title & 右边文字item
-//    case BackTitleRightImage        //包含返回按钮 & title & 右边图片item
-//}
 
 /// 自定义导航条控制器
 class HTCustomNavController: UIViewController {
+    
+    /// 自定义导航条的风格
+    public enum HTCustomNavStyle: UInt {
+        case Title                      //只有title
+        case BackTile                   //包含返回按钮 & title
+        case BackTitleRightTitle        //包含返回按钮 & title & 右边文字item
+        case BackTitleRightImage        //包含返回按钮 & title & 右边图片item
+    }
     
     // MARK: 公开给外部的自定义接口
     /// 该控制器的界面是否有tabBar(默认为没有)
@@ -112,21 +113,19 @@ class HTCustomNavController: UIViewController {
     private var rightBtn = UIButton(type: .custom)          // 右边的item
     private var rightLabel = UILabel()                      // 右边的item(文字形式)
     
-//    open var style: HTCustomNavStyle = .Title;
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
     
-    /// 创建自定义导航条控制器(其他属性的值需自己单独设置)
-    ///
-    /// - Parameter style: 导航条风格
-//    init(style: HTCustomNavStyle) {
-//        super.init(nibName: nil, bundle: nil)
-//    }
-    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     /// 创建自定义导航条控制器
     ///
     /// - Parameter title: title
-    init(title: String) {
+    convenience init(title: String) {
+        self.init(nibName: nil, bundle: nil)
         navTitle = title
-        super.init(nibName: nil, bundle: nil)
         self.creatView()
     }
     
@@ -135,10 +134,10 @@ class HTCustomNavController: UIViewController {
     /// - Parameters:
     ///   - backImgString: 返回按钮图片string
     ///   - title: title
-    init(backImgString: String, title: String) {
+    convenience init(backImgString: String, title: String) {
+        self.init(nibName: nil, bundle: nil)
         backImageString = backImgString
         navTitle = title
-        super.init(nibName: nil, bundle: nil)
         self.creatView()
     }
     
@@ -148,11 +147,11 @@ class HTCustomNavController: UIViewController {
     ///   - backImgString: 返回按钮图片
     ///   - title: title
     ///   - rightTitle: 右边item(文字形式)
-    init(backImgString: String, title: String, rightTitle: String) {
+    convenience init(backImgString: String, title: String, rightTitle: String) {
+        self.init(nibName: nil, bundle: nil)
         backImageString = backImgString
         navTitle = title
         self.rightTitle = rightTitle
-        super.init(nibName: nil, bundle: nil)
         self.creatView()
     }
     
@@ -162,17 +161,13 @@ class HTCustomNavController: UIViewController {
     ///   - backImgString: 返回按钮图片
     ///   - title: title
     ///   - rightImgString: 右边item(图片形式)
-    init(backImgString: String, title: String, rightImgString: String) {
+    convenience init(backImgString: String, title: String, rightImgString: String) {
+        self.init(nibName: nil, bundle: nil)
         backImageString = backImgString
         navTitle = title
         self.rightImgString = rightImgString
-        super.init(nibName: nil, bundle: nil)
         self.creatView()
     }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     
     /// 布局视图
     fileprivate func creatView(){

@@ -114,6 +114,88 @@ extension String{
     }
 }
 
+extension String {
+    /// 将”XX天XX小时XX分钟XX秒XX毫秒“格式的字符串转为时间戳
+    ///
+    /// - Parameter timeString: 时间字符串(其中的“天” or “小时” or “分钟” or “秒” 可没有,如“5小时43分钟20毫秒”)
+    /// - Returns: 时间戳(毫秒)
+    func ht_transformToTimeStamp() -> Int {
+        /// 天
+        var days = 0
+        /// 时
+        var hours = 0
+        /// 分
+        var minutes = 0
+        /// 秒
+        var seconds = 0
+        /// 毫秒
+        var milliseconds = 0
+        
+        var tempStr = self
+        
+        var strLength = tempStr.count
+        
+        // 找天
+        if let dayIndex = findCharIndex(str: tempStr, char: "天") {
+            let dayStr = String(tempStr.dropLast(strLength - dayIndex))
+            days = Int(String(dayStr))!
+            // 找到天以后拿掉天的字符串
+            tempStr = String(tempStr.dropFirst(dayIndex + 1))
+            strLength = tempStr.count
+            ht_print(message: dayStr+"天")
+        }
+        
+        // 找时
+        if let hourIndex = findCharIndex(str: tempStr, char: "小") {
+            let hourStr = String(tempStr.dropLast(strLength - hourIndex))
+            hours = Int(hourStr)!
+            // 找到时以后拿掉时的字符串
+            tempStr = String(tempStr.dropFirst(hourIndex + 2))    // 加2是因为s小时两个字符
+            strLength = tempStr.count
+            ht_print(message: hourStr + "小时")
+        }
+        
+        // 找分
+        if let minuteIndex = findCharIndex(str: tempStr, char: "分") {
+            let minuteStr = String(tempStr.dropLast(strLength - minuteIndex))
+            minutes = Int(minuteStr)!
+            // 找到分以后拿掉分的字符串
+            tempStr = String(tempStr.dropFirst(minuteIndex + 2))
+            strLength = tempStr.count
+            ht_print(message: minuteStr + "分钟")
+        }
+        
+        // 找秒
+        if let secondIndex = findCharIndex(str: tempStr, char: "秒") {
+            let secondeStr = String(tempStr.dropLast(strLength - secondIndex))
+            seconds = Int(secondeStr)!
+            // 找到秒以后拿掉秒的字符串
+            tempStr = String(tempStr.dropFirst(secondIndex + 1))
+            strLength = tempStr.count
+            ht_print(message: secondeStr + "秒")
+        }
+        
+        // 找毫秒
+        if let millisecondIndex = findCharIndex(str: tempStr, char: "毫") {
+            let millisecondStr = String(tempStr.dropLast(strLength - millisecondIndex))
+            milliseconds = Int(millisecondStr)!
+            ht_print(message: millisecondStr + "毫秒")
+        }
+        
+        return (days*24*3600 + hours*3600 + minutes*60 + seconds)*1000 + milliseconds
+    }
+    
+    /// 寻找某个字符在字符串中的位置
+    fileprivate func findCharIndex(str: String, char: String) -> Int? {
+        for (idx, item) in str.enumerated() {
+            if String(item) == char {
+                return idx
+            }
+        }
+        return nil
+    }
+}
+
 
 
 

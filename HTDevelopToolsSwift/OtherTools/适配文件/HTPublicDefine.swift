@@ -24,7 +24,7 @@ public func ht_colorWith(hexValue: Int) -> UIColor{
 }
 
 /// Debug输出
-public func ht_print<T>(message: T, file: String = #file, method: String = #function, line: Int = #line) {
+public func ht_print<T>(message: T, file: String = #file, line: Int = #line, method: String = #function) {
     #if DEBUG
     print("这里是\((file as NSString).lastPathComponent)文件的第\(line)行,\(method)方法,logMessage: \(message)")
     #endif

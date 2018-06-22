@@ -18,7 +18,7 @@ fileprivate let Screen_W = UIScreen.main.bounds.width
 fileprivate let Screen_H = UIScreen.main.bounds.height
 
 fileprivate let hudMax_W = Screen_W * 0.75
-fileprivate let hudMin_W: CGFloat = 120
+fileprivate let hudMin_W: CGFloat = 100
 
 fileprivate let animatedTime: Double = 0.35
 
@@ -213,7 +213,7 @@ class HTHUDBackGroundView: UIVisualEffectView {
     
     open var background: UIColor = .red {
         didSet {
-            backgroundColor = background
+            contentView.backgroundColor = background
         }
     }
     

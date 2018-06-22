@@ -17,7 +17,7 @@ class MGLoadView: UIView {
     
     /// 必须宽高相等
     override init(frame: CGRect) {
-        super.init(frame: CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>))
+        super.init(frame: frame)
         backgroundColor = ht_color(r: 10, g: 89, b: 226, alpha: 1)
         layer.cornerRadius = frame.size.height / 2
         layer.masksToBounds = true

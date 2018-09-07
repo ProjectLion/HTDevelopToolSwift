@@ -11,12 +11,12 @@ import UIKit
 class Model: NSObject {
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         super.setValue(value, forUndefinedKey: key)
-        print("HT------>DEBUG: 收到的key\(key)")
-        print("HT------>DEBUG: 收到的value\(value)")
+        
     }
     
     override func setValue(_ value: Any?, forKey key: String) {
-        
+        print("HT------>DEBUG: 收到的key\(key)")
+        print("HT------>DEBUG: 收到的value\(value)")
     }
     
     var id: Int = 0

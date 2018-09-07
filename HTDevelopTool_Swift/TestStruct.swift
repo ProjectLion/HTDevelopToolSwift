@@ -22,6 +22,7 @@ struct TestStruct {
 
     var isDownload: Bool = false
     
+    
     /// 结构体自带构造器, 类似TestStruct(id: Int, desc: String, time: Float, isDownload: Bool, ....)
 //    var id: Int
 //

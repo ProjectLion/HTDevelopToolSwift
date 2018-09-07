@@ -118,7 +118,6 @@ class HTHUD: UIView {
     
     /// setUp UI
     private func setUp() {
-        
         bezelView = HTHUDBackGroundView(style: .progress, backgroundStyle: .light)
         bezelView.center = CGPoint(x: Screen_W / 2, y: Screen_H / 2)
         bezelView.bounds = CGRect(x: 0, y: 0, width: hudMin_W, height: hudMin_W)

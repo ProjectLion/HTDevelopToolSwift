@@ -62,6 +62,18 @@ extension HTPrivatePermission {
             statuBlock(.other)
         }
     }
+    
+    /// 获取定位权限
+    func getLocationPermission(statuBlock: (Bool) -> Void) {
+        
+        let status = CLLocationManager.authorizationStatus()
+        
+        if status == .notDetermined || status == .restricted || status == .denied {
+            statuBlock(false)
+        } else {
+            statuBlock(true)
+        }
+    }
 }
 
 //MARK: ^^^^^^^^^^^^^^^ checkPermissions ^^^^^^^^^^^^^^^

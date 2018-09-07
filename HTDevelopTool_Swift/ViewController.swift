@@ -24,50 +24,64 @@ class ViewController: UIViewController, HTScrollTitleDelegate {
     
     var scrol: HTScrollTitleView!
     
+    let proportion: CGFloat = 333 / 750
+    
+    /// 顶部背景图
+    lazy var headerImage: UIImageView = {
+        let img = UIImageView(image: #imageLiteral(resourceName: "PersonCenter_HeaderImg"))
+        img.frame = CGRect(x: 0, y: 0, width: SCREEN_W, height: SCREEN_W * proportion)
+        return img
+    }()
+    
+    /// 个人信息
+    lazy var userInfoView: UIView = {
+        let v = UIView(x: 0, y: headerImage.ht_bottom, width: SCREEN_W, height: 150, backGroundColor: .white)
+        return v
+    }()
+    
+    /// 头像
+    lazy var userIcon: UIImageView = {
+        let img = UIImageView(image: UIImage(named: "icon_discover_on"))
+        img.ht_width = ht_W(83)
+        img.ht_height = ht_W(83)
+        img.ht_centerX = SCREEN_W / 2
+        img.ht_centerY = SCREEN_W * proportion
+        img.backgroundColor = .red
+        img.layer.cornerRadius = ht_W(83) / 2
+        img.layer.masksToBounds = true
+        return img
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        view.backgroundColor = .green
-        
-        let 🐶 = "🐶"
-        let 😂 = 13
-        
-        let l = UILabel(x: 0, y: 60, width: 100, height: 100)
-        l
-        .ht_set(text: 🐶, font: ht_fontW(CGFloat(😂)), textColor: ht_color(r: 0, g: 0, b: 0, alpha: 1))
-        .ht_set(lines: 0, textAlignment: .center)
-        .ht_set(isFit: true)
-        .ht_add(borderWith: 1, borderColor: .red, cornerRadius: 5)
-        .ht_end()
-        view.addSubview(l)
-        
-        let btn = UIButton(x: 0, y: 100, width: 80, height: 50, style: .custom)
-//        btn.ht_set(backGroundColor: .red, state: .normal)
-        btn.addTarget(self, action: #selector(test), for: .touchUpInside)
-        btn.ht_set(title: "测试", font: ht_fontW(10), color: .red, state: .normal)
-        btn.setImage(UIImage(named: "icon_discover_on"), for: .normal)
-        btn.ht_set(imgPointStyle: .top, spaceing: 100)
-        view.addSubview(btn)
-        
-        var config = HTScrollTitleConfig()
-        config.titleColor = .red
-        config.selectTitleColor = .green
-        config.indicatorColor = .blue
-        config.borderColor = .black
-        config.currentIndex = 4
-        config.bottomLineColor = .darkGray
-        scrol = HTScrollTitleView(frame: CGRect(x: 50, y: 200, width: SCREEN_W - 100, height: 50), titleArr: ["互动", "表演", "贴纸", "问我", "手", "铁血书生郭沫若", "从善如流马歇尔"], delegate: self, scrollTitleConfig: config)
-        view.addSubview(scrol)
-        
-        let loading = MGLoadView(frame: CGRect(x: 50, y: 400, width: 150, height: 150))
-        view.addSubview(loading)
+        view.addSubview(headerImage)
+        view.addSubview(userInfoView)
+        view.addSubview(userIcon)
+//        var config = HTScrollTitleConfig()
+//        config.titleColor = .red
+//        config.selectTitleColor = .green
+//        config.indicatorColor = .blue
+//        config.borderColor = .black
+//        config.currentIndex = 4
+//        config.bottomLineColor = .darkGray
+//        scrol = HTScrollTitleView(frame: CGRect(x: 50, y: 200, width: SCREEN_W - 100, height: 50), titleArr: ["互动", "表演", "贴纸", "问我", "手", "铁血书生郭沫若", "从善如流马歇尔"], delegate: self, scrollTitleConfig: config)
+//        view.addSubview(scrol)
+//
+//        let loading = MGLoadView(frame: CGRect(x: 50, y: 400, width: 150, height: 150))
+//        view.addSubview(loading)
     }
     
     @objc func test() {
-        ht_print(message: "string")
-        HTHUD.showProgress(animated: true)
-        let mod = Model.Model_Struct.Model_Struct_1.Model_Struct_2.init(cc: 5)
+//        ht_print(message: "string")
+//        HTHUD.showProgress(animated: true)
+        let mod = Model()
+        mod.setValue("3", forKey: "desc")
+//        let mod = Model.Model_Struct.Model_Struct_1.Model_Struct_2.init(cc: 5)
+//
+//        ht_print(message: transform(timeString: "1天"))
+        
     }
     
 }
-

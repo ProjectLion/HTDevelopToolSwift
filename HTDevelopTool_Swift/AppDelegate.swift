@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+//        window = UIWindow(x: 0, y: 0, width: SCREEN_W, height: SCREEN_H)
+//        let nava = UINavigationController(rootViewController: RootViewContro(backImgString: "", title: "根控制器"))
+//        window?.rootViewController = nava
+//        window?.makeKeyAndVisible()
+        
         // Override point for customization after application launch.
         return true
     }

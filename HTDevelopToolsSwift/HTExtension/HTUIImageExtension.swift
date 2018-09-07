@@ -16,7 +16,7 @@ extension UIImage {
     ///
     /// - Parameter image: 需要转的图片
     /// - Returns: data
-    func ht_transformToData() -> Data{
+    func ht_transformToData() -> Data {
         if self.pngData() != nil {
             return self.jpegData(compressionQuality: 1)!
         }else{
@@ -28,7 +28,7 @@ extension UIImage {
     ///
     /// - Parameter data: 图片数据
     /// - Returns: 获取到的图片
-    func ht_getImageWith(data: Data) -> UIImage?{
+    func ht_getImageWith(data: Data) -> UIImage? {
         
         guard let img = UIImage(data: data) else {
             return nil
@@ -39,7 +39,7 @@ extension UIImage {
     /// 压缩图片
     ///
     /// - Returns: 压缩后的图片
-    func ht_imageCut() -> UIImage{
+    func ht_imageCut() -> UIImage {
         guard self.pngData() != nil else {
             return self.ht_getImageWith(data: self.jpegData(compressionQuality: 0.1)!)!
         }

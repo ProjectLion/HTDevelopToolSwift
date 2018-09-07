@@ -57,7 +57,7 @@ extension UILabel {
     ///   - text: 内容
     ///   - font: 字体
     ///   - textColor: 字体颜色
-    open func ht_set(text: String = "", font: UIFont = UIFont.systemFont(ofSize: 13), textColor: UIColor = .gray) -> UILabel {
+    @discardableResult open func ht_set(text: String = "", font: UIFont = UIFont.systemFont(ofSize: 13), textColor: UIColor = .gray) -> UILabel {
         self.text = text
         self.textColor = textColor
         self.font = font
@@ -67,7 +67,7 @@ extension UILabel {
     /// 是否自适应大小 (默认为true)
     ///
     /// - Parameter isFit: 布尔值
-    open func ht_set(isFit: Bool = true) -> UILabel {
+    @discardableResult open func ht_set(isFit: Bool = true) -> UILabel {
         isFit ? self.sizeToFit() : nil
         return self
     }
@@ -77,7 +77,7 @@ extension UILabel {
     /// - Parameters:
     ///   - lines: 行数
     ///   - textAlignment: 对齐方式
-    open func ht_set(lines: Int, textAlignment: NSTextAlignment) -> UILabel {
+    @discardableResult open func ht_set(lines: Int, textAlignment: NSTextAlignment) -> UILabel {
         self.numberOfLines = lines
         self.textAlignment = textAlignment
         return self
@@ -91,7 +91,7 @@ extension UILabel {
     ///   - attributedValue: 富文本的value值
     ///   - location: 开始位置
     ///   - length: 长度
-    open func ht_set(attributedText: String, attributedName: NSAttributedString.Key, attributedValue: Any, location: Int, length: Int) -> UILabel {
+    @discardableResult open func ht_set(attributedText: String, attributedName: NSAttributedString.Key, attributedValue: Any, location: Int, length: Int) -> UILabel {
         let attriStr = NSMutableAttributedString(string: attributedText)
         attriStr.addAttributes([attributedName: attributedValue], range: NSRange(location: location, length: length))
         self.attributedText = attriStr

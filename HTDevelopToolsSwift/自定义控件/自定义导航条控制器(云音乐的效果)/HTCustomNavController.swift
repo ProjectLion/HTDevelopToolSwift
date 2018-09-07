@@ -37,14 +37,14 @@ class HTCustomNavController: UIViewController {
     }
     
     /// 导航条颜色(默认为白色)
-    open var navColor: UIColor = UIColor.white{
+    open var navColor: UIColor = UIColor.white {
         didSet{
             topView.backgroundColor = navColor
         }
     }
     
     /// 主视图的背景色(默认为白色)
-    open var mainBgViewColor: UIColor = UIColor.white{
+    open var mainBgViewColor: UIColor = UIColor.white {
         didSet{
             BGView.backgroundColor = mainBgViewColor
         }
@@ -179,7 +179,7 @@ class HTCustomNavController: UIViewController {
     fileprivate func creatNavView(){
         
         topView.frame = CGRect(x: 0, y: 0, width: SCREEN_W, height: navHeight)
-        topView.backgroundColor = UIColor.white
+        topView.backgroundColor = navColor
         view.addSubview(topView)
         
         if backImageString != "" {

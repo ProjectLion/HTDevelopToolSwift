@@ -88,28 +88,29 @@ extension UIView {
     /// view的中心
     var ht_center: CGPoint{
         get{
-            return self.center
+            return CGPoint(x: ht_centerX, y: ht_centerY)
         }
         set{
-            self.center = newValue
+            ht_centerX = newValue.x
+            ht_centerY = newValue.y
         }
     }
     /// view的X轴中心
     var ht_centerX: CGFloat{
         get{
-            return self.center.x
+            return self.frame.origin.x + self.frame.size.width / 2
         }
         set{
-            self.center.x = newValue
+            self.frame.origin.x = newValue - self.frame.size.width / 2
         }
     }
     /// view的Y轴中心
     var ht_centerY: CGFloat{
         get{
-            return self.center.y
+            return self.frame.origin.y + self.frame.size.height / 2
         }
         set{
-            self.center.y = newValue
+            self.frame.origin.y = newValue - self.frame.size.height / 2
         }
     }
 }
@@ -130,11 +131,6 @@ extension UIView {
     convenience init(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, backGroundColor: UIColor = .white){
         self.init(frame: CGRect(x: x, y: y, width: width, height: height))
         self.backgroundColor = backGroundColor
-    }
-    
-    /// 收尾
-    open func ht_end() {
-        
     }
     
     /// 添加边框、颜色及切圆角 (默认为灰色1.5宽的边框,圆角半径为5)
@@ -170,7 +166,22 @@ extension UIView {
     }
 }
 
-
+/// 系统约束的拓展，方便在使用xib拖拽UI时进行屏幕尺寸比例适配
+extension NSLayoutConstraint {
+    
+    @IBInspectable public var adapterScreen: Bool {
+        set {
+            if newValue {
+                ht_print(message: constant)
+                constant = constant * (SCREEN_W / 375)
+                ht_print(message: constant)
+            }
+        }
+        get {
+            return true
+        }
+    }
+}
 
 
 

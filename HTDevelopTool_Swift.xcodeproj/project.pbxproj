@@ -27,22 +27,6 @@
 		8E07CAF721096EB400DE10AE /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E07CAF621096EB400DE10AE /* TagCell.swift */; };
 		8E07CAF92109785600DE10AE /* TagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E07CAF82109785600DE10AE /* TagCollectionView.swift */; };
 		8E07CAFB21097D1600DE10AE /* CollectionTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E07CAFA21097D1600DE10AE /* CollectionTagCell.swift */; };
-		8E35B05921423F03002F1C63 /* HTAlertConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B04621423F03002F1C63 /* HTAlertConfigModel.swift */; };
-		8E35B05A21423F03002F1C63 /* HTUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B04821423F03002F1C63 /* HTUIViewExtension.swift */; };
-		8E35B05B21423F03002F1C63 /* HTAlertConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B04921423F03002F1C63 /* HTAlertConfig.swift */; };
-		8E35B05C21423F03002F1C63 /* HTAlertBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B04B21423F03002F1C63 /* HTAlertBaseViewController.swift */; };
-		8E35B05D21423F03002F1C63 /* HTActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B04C21423F03002F1C63 /* HTActionSheetViewController.swift */; };
-		8E35B05E21423F03002F1C63 /* HTAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B04D21423F03002F1C63 /* HTAlertViewController.swift */; };
-		8E35B05F21423F03002F1C63 /* HTAlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B04E21423F03002F1C63 /* HTAlertWindow.swift */; };
-		8E35B06021423F03002F1C63 /* HTCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B05021423F03002F1C63 /* HTCustomView.swift */; };
-		8E35B06121423F03002F1C63 /* HTActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B05121423F03002F1C63 /* HTActionButton.swift */; };
-		8E35B06221423F03002F1C63 /* HTItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B05221423F03002F1C63 /* HTItemView.swift */; };
-		8E35B06321423F03002F1C63 /* HTItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B05321423F03002F1C63 /* HTItem.swift */; };
-		8E35B06421423F03002F1C63 /* HTAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B05421423F03002F1C63 /* HTAction.swift */; };
-		8E35B06521423F03002F1C63 /* HTItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B05521423F03002F1C63 /* HTItemLabel.swift */; };
-		8E35B06621423F03002F1C63 /* HTItemTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B05621423F03002F1C63 /* HTItemTextField.swift */; };
-		8E35B06721423F03002F1C63 /* HTAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B05721423F03002F1C63 /* HTAlertHelper.swift */; };
-		8E35B06821423F03002F1C63 /* HTAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35B05821423F03002F1C63 /* HTAlert.swift */; };
 		8E4ED3A720DCD16800F37624 /* RootViewContro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4ED3A620DCD16800F37624 /* RootViewContro.swift */; };
 		8E51F56320C66F61007AE705 /* HTScrollTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51F56220C66F61007AE705 /* HTScrollTitleView.swift */; };
 		8E5300E720DB882000AAF134 /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5300E620DB882000AAF134 /* Controllers.swift */; };
@@ -56,6 +40,7 @@
 		8EEB163220BFEEB80055E118 /* HTShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB162E20BFEEB80055E118 /* HTShareManager.swift */; };
 		8EEB163320BFEEB80055E118 /* HTTapticEngineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB163020BFEEB80055E118 /* HTTapticEngineManager.swift */; };
 		8EEB163720BFF1650055E118 /* HTPrivatePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB163620BFF1650055E118 /* HTPrivatePermission.swift */; };
+		8EFAA76821460BC000F82216 /* HTXIBExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAA76721460BC000F82216 /* HTXIBExtension.swift */; };
 		BFDC3FDABEAF73AA22287E26 /* Pods_HTDevelopTool_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33BE0EA41CCE953FCB2F2DE /* Pods_HTDevelopTool_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,22 +68,6 @@
 		8E07CAF621096EB400DE10AE /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		8E07CAF82109785600DE10AE /* TagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionView.swift; sourceTree = "<group>"; };
 		8E07CAFA21097D1600DE10AE /* CollectionTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTagCell.swift; sourceTree = "<group>"; };
-		8E35B04621423F03002F1C63 /* HTAlertConfigModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAlertConfigModel.swift; sourceTree = "<group>"; };
-		8E35B04821423F03002F1C63 /* HTUIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTUIViewExtension.swift; sourceTree = "<group>"; };
-		8E35B04921423F03002F1C63 /* HTAlertConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAlertConfig.swift; sourceTree = "<group>"; };
-		8E35B04B21423F03002F1C63 /* HTAlertBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAlertBaseViewController.swift; sourceTree = "<group>"; };
-		8E35B04C21423F03002F1C63 /* HTActionSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTActionSheetViewController.swift; sourceTree = "<group>"; };
-		8E35B04D21423F03002F1C63 /* HTAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAlertViewController.swift; sourceTree = "<group>"; };
-		8E35B04E21423F03002F1C63 /* HTAlertWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAlertWindow.swift; sourceTree = "<group>"; };
-		8E35B05021423F03002F1C63 /* HTCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCustomView.swift; sourceTree = "<group>"; };
-		8E35B05121423F03002F1C63 /* HTActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTActionButton.swift; sourceTree = "<group>"; };
-		8E35B05221423F03002F1C63 /* HTItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTItemView.swift; sourceTree = "<group>"; };
-		8E35B05321423F03002F1C63 /* HTItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTItem.swift; sourceTree = "<group>"; };
-		8E35B05421423F03002F1C63 /* HTAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAction.swift; sourceTree = "<group>"; };
-		8E35B05521423F03002F1C63 /* HTItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTItemLabel.swift; sourceTree = "<group>"; };
-		8E35B05621423F03002F1C63 /* HTItemTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTItemTextField.swift; sourceTree = "<group>"; };
-		8E35B05721423F03002F1C63 /* HTAlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAlertHelper.swift; sourceTree = "<group>"; };
-		8E35B05821423F03002F1C63 /* HTAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAlert.swift; sourceTree = "<group>"; };
 		8E4ED3A620DCD16800F37624 /* RootViewContro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewContro.swift; sourceTree = "<group>"; };
 		8E51F56220C66F61007AE705 /* HTScrollTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTScrollTitleView.swift; sourceTree = "<group>"; };
 		8E5300E620DB882000AAF134 /* Controllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
@@ -112,6 +81,7 @@
 		8EEB162E20BFEEB80055E118 /* HTShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTShareManager.swift; sourceTree = "<group>"; };
 		8EEB163020BFEEB80055E118 /* HTTapticEngineManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTapticEngineManager.swift; sourceTree = "<group>"; };
 		8EEB163620BFF1650055E118 /* HTPrivatePermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTPrivatePermission.swift; sourceTree = "<group>"; };
+		8EFAA76721460BC000F82216 /* HTXIBExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTXIBExtension.swift; sourceTree = "<group>"; };
 		A014F3D3E36452872954761A /* Pods-HTDevelopTool_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTDevelopTool_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HTDevelopTool_Swift/Pods-HTDevelopTool_Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		D33BE0EA41CCE953FCB2F2DE /* Pods_HTDevelopTool_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HTDevelopTool_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -181,7 +151,6 @@
 		181879541FE27C3D009CD807 /* 自定义控件 */ = {
 			isa = PBXGroup;
 			children = (
-				8E4ED3A820E08D2100F37624 /* 自定义alert */,
 				8EC4B5CB20D8D66600CF31E3 /* 自定义Layer篇 */,
 				8E6A1A9D20D0C096001B1A1F /* 自定义HUD */,
 				8E51F56120C66F43007AE705 /* 滚动的标题栏 */,
@@ -204,6 +173,7 @@
 				181879671FE36FEE009CD807 /* HTUIScreenExtension.swift */,
 				1818796F1FE793EE009CD807 /* HTTableViewExtension.swift */,
 				186A2847201084830058AF10 /* HTUIImageExtension.swift */,
+				8EFAA76721460BC000F82216 /* HTXIBExtension.swift */,
 			);
 			path = HTExtension;
 			sourceTree = "<group>";
@@ -252,61 +222,6 @@
 				7906B39BD6D88B5EE7C7DF8E /* Pods-HTDevelopTool_Swift.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		8E35B04521423F03002F1C63 /* HTAlert copy */ = {
-			isa = PBXGroup;
-			children = (
-				8E35B04621423F03002F1C63 /* HTAlertConfigModel.swift */,
-				8E35B04721423F03002F1C63 /* Extension */,
-				8E35B04921423F03002F1C63 /* HTAlertConfig.swift */,
-				8E35B04A21423F03002F1C63 /* ViewControllers */,
-				8E35B04F21423F03002F1C63 /* CustomViews */,
-				8E35B05721423F03002F1C63 /* HTAlertHelper.swift */,
-				8E35B05821423F03002F1C63 /* HTAlert.swift */,
-			);
-			path = "HTAlert copy";
-			sourceTree = "<group>";
-		};
-		8E35B04721423F03002F1C63 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				8E35B04821423F03002F1C63 /* HTUIViewExtension.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		8E35B04A21423F03002F1C63 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				8E35B04B21423F03002F1C63 /* HTAlertBaseViewController.swift */,
-				8E35B04C21423F03002F1C63 /* HTActionSheetViewController.swift */,
-				8E35B04D21423F03002F1C63 /* HTAlertViewController.swift */,
-				8E35B04E21423F03002F1C63 /* HTAlertWindow.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		8E35B04F21423F03002F1C63 /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				8E35B05021423F03002F1C63 /* HTCustomView.swift */,
-				8E35B05121423F03002F1C63 /* HTActionButton.swift */,
-				8E35B05221423F03002F1C63 /* HTItemView.swift */,
-				8E35B05321423F03002F1C63 /* HTItem.swift */,
-				8E35B05421423F03002F1C63 /* HTAction.swift */,
-				8E35B05521423F03002F1C63 /* HTItemLabel.swift */,
-				8E35B05621423F03002F1C63 /* HTItemTextField.swift */,
-			);
-			path = CustomViews;
-			sourceTree = "<group>";
-		};
-		8E4ED3A820E08D2100F37624 /* 自定义alert */ = {
-			isa = PBXGroup;
-			children = (
-				8E35B04521423F03002F1C63 /* HTAlert copy */,
-			);
-			path = "自定义alert";
 			sourceTree = "<group>";
 		};
 		8E51F56120C66F43007AE705 /* 滚动的标题栏 */ = {
@@ -478,44 +393,29 @@
 				186D22F620416ACC0017949C /* Model.swift in Sources */,
 				181879661FE36AE3009CD807 /* HTUIViewExtension.swift in Sources */,
 				186A2848201084830058AF10 /* HTUIImageExtension.swift in Sources */,
-				8E35B06621423F03002F1C63 /* HTItemTextField.swift in Sources */,
-				8E35B05B21423F03002F1C63 /* HTAlertConfig.swift in Sources */,
-				8E35B06321423F03002F1C63 /* HTItem.swift in Sources */,
-				8E35B05A21423F03002F1C63 /* HTUIViewExtension.swift in Sources */,
-				8E35B06121423F03002F1C63 /* HTActionButton.swift in Sources */,
 				8E4ED3A720DCD16800F37624 /* RootViewContro.swift in Sources */,
 				8EEB163120BFEEB80055E118 /* HTImageWater.swift in Sources */,
 				181879681FE36FEE009CD807 /* HTUIScreenExtension.swift in Sources */,
 				8E80D7E920D2084200C943B6 /* MGLoadView.swift in Sources */,
-				8E35B05C21423F03002F1C63 /* HTAlertBaseViewController.swift in Sources */,
 				8EEB163220BFEEB80055E118 /* HTShareManager.swift in Sources */,
 				8EEB163720BFF1650055E118 /* HTPrivatePermission.swift in Sources */,
-				8E35B06821423F03002F1C63 /* HTAlert.swift in Sources */,
 				8EA9EA3C207205CF00C9C706 /* HTLabelExtension.swift in Sources */,
 				181879471FE27BFA009CD807 /* HTDevelopTool_Swift.xcdatamodeld in Sources */,
-				8E35B06521423F03002F1C63 /* HTItemLabel.swift in Sources */,
 				8EA9EA3D207205CF00C9C706 /* HTUIButtonExtension.swift in Sources */,
 				8E07CAF92109785600DE10AE /* TagCollectionView.swift in Sources */,
+				8EFAA76821460BC000F82216 /* HTXIBExtension.swift in Sources */,
 				8E07CAFB21097D1600DE10AE /* CollectionTagCell.swift in Sources */,
-				8E35B05D21423F03002F1C63 /* HTActionSheetViewController.swift in Sources */,
 				8E6A1A9F20D0C0C4001B1A1F /* HTHUD.swift in Sources */,
 				8E86D1FA20CF68A800995D42 /* TestStruct.swift in Sources */,
 				181879701FE793EE009CD807 /* HTTableViewExtension.swift in Sources */,
 				181879411FE27BFA009CD807 /* ViewController.swift in Sources */,
-				8E35B06421423F03002F1C63 /* HTAction.swift in Sources */,
-				8E35B06021423F03002F1C63 /* HTCustomView.swift in Sources */,
-				8E35B06221423F03002F1C63 /* HTItemView.swift in Sources */,
 				8E5300E720DB882000AAF134 /* Controllers.swift in Sources */,
 				181879741FE9EEA4009CD807 /* HTDatePickerSwift.swift in Sources */,
-				8E35B06721423F03002F1C63 /* HTAlertHelper.swift in Sources */,
 				8EEB163320BFEEB80055E118 /* HTTapticEngineManager.swift in Sources */,
 				181879641FE36342009CD807 /* HTDataExtension.swift in Sources */,
 				181879721FE7A67C009CD807 /* HTDateExtension.swift in Sources */,
 				181879621FE35F0D009CD807 /* HTStringExtension.swift in Sources */,
-				8E35B05E21423F03002F1C63 /* HTAlertViewController.swift in Sources */,
-				8E35B05921423F03002F1C63 /* HTAlertConfigModel.swift in Sources */,
 				1818795C1FE27CE0009CD807 /* HTCustomNavController.swift in Sources */,
-				8E35B05F21423F03002F1C63 /* HTAlertWindow.swift in Sources */,
 				8E51F56320C66F61007AE705 /* HTScrollTitleView.swift in Sources */,
 				1818793F1FE27BFA009CD807 /* AppDelegate.swift in Sources */,
 				1818796B1FE3778A009CD807 /* HTScreenFitSwift.swift in Sources */,

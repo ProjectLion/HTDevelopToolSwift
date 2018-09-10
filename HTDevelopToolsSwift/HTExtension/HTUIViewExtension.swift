@@ -166,22 +166,5 @@ extension UIView {
     }
 }
 
-/// 系统约束的拓展，方便在使用xib拖拽UI时进行屏幕尺寸比例适配
-extension NSLayoutConstraint {
-    
-    @IBInspectable public var adapterScreen: Bool {
-        set {
-            if newValue {
-                ht_print(message: constant)
-                constant = constant * (SCREEN_W / 375)
-                ht_print(message: constant)
-            }
-        }
-        get {
-            return true
-        }
-    }
-}
-
 
 

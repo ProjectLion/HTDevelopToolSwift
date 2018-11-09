@@ -36,6 +36,7 @@
 		8EA9EA3C207205CF00C9C706 /* HTLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9EA3A207205CF00C9C706 /* HTLabelExtension.swift */; };
 		8EA9EA3D207205CF00C9C706 /* HTUIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9EA3B207205CF00C9C706 /* HTUIButtonExtension.swift */; };
 		8EC4B5CA20D8AB1F00CF31E3 /* HTPublicDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4B5C920D8AB1F00CF31E3 /* HTPublicDefine.swift */; };
+		8EDBB8A62195BB8B00A71A87 /* HTAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDBB8A52195BB8B00A71A87 /* HTAlamofireManager.swift */; };
 		8EEB163120BFEEB80055E118 /* HTImageWater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB162C20BFEEB80055E118 /* HTImageWater.swift */; };
 		8EEB163220BFEEB80055E118 /* HTShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB162E20BFEEB80055E118 /* HTShareManager.swift */; };
 		8EEB163320BFEEB80055E118 /* HTTapticEngineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB163020BFEEB80055E118 /* HTTapticEngineManager.swift */; };
@@ -77,6 +78,7 @@
 		8EA9EA3A207205CF00C9C706 /* HTLabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLabelExtension.swift; sourceTree = "<group>"; };
 		8EA9EA3B207205CF00C9C706 /* HTUIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTUIButtonExtension.swift; sourceTree = "<group>"; };
 		8EC4B5C920D8AB1F00CF31E3 /* HTPublicDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTPublicDefine.swift; sourceTree = "<group>"; };
+		8EDBB8A52195BB8B00A71A87 /* HTAlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTAlamofireManager.swift; sourceTree = "<group>"; };
 		8EEB162C20BFEEB80055E118 /* HTImageWater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTImageWater.swift; sourceTree = "<group>"; };
 		8EEB162E20BFEEB80055E118 /* HTShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTShareManager.swift; sourceTree = "<group>"; };
 		8EEB163020BFEEB80055E118 /* HTTapticEngineManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTapticEngineManager.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		181879531FE27C09009CD807 /* HTDevelopToolsSwift */ = {
 			isa = PBXGroup;
 			children = (
+				8EDBB8A42195BB3C00A71A87 /* 网络请求 */,
 				181879561FE27C65009CD807 /* OtherTools */,
 				181879551FE27C46009CD807 /* HTExtension */,
 				181879541FE27C3D009CD807 /* 自定义控件 */,
@@ -239,6 +242,14 @@
 			path = "自定义HUD";
 			sourceTree = "<group>";
 		};
+		8EDBB8A42195BB3C00A71A87 /* 网络请求 */ = {
+			isa = PBXGroup;
+			children = (
+				8EDBB8A52195BB8B00A71A87 /* HTAlamofireManager.swift */,
+			);
+			path = "网络请求";
+			sourceTree = "<group>";
+		};
 		8EEB162A20BFEEB80055E118 /* 给视频图片添加水印 */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +309,7 @@
 				181879371FE27BFA009CD807 /* Sources */,
 				181879381FE27BFA009CD807 /* Frameworks */,
 				181879391FE27BFA009CD807 /* Resources */,
+				742850E2B3588C9F3F7FC869 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -356,6 +368,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		742850E2B3588C9F3F7FC869 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HTDevelopTool_Swift/Pods-HTDevelopTool_Swift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HTDevelopTool_Swift/Pods-HTDevelopTool_Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9C19030CCDCF5A4C1E2A00E4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,6 +437,7 @@
 				181879641FE36342009CD807 /* HTDataExtension.swift in Sources */,
 				181879721FE7A67C009CD807 /* HTDateExtension.swift in Sources */,
 				181879621FE35F0D009CD807 /* HTStringExtension.swift in Sources */,
+				8EDBB8A62195BB8B00A71A87 /* HTAlamofireManager.swift in Sources */,
 				1818795C1FE27CE0009CD807 /* HTCustomNavController.swift in Sources */,
 				8E51F56320C66F61007AE705 /* HTScrollTitleView.swift in Sources */,
 				1818793F1FE27BFA009CD807 /* AppDelegate.swift in Sources */,

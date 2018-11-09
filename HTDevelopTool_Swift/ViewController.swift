@@ -8,14 +8,6 @@
 
 import UIKit
 
-func 如果(这是条件: Bool) {
-    if 这是条件 {
-        
-    } else {
-        
-    }
-}
-
 class ViewController: UIViewController, HTScrollTitleDelegate {
 //    let ct = CTCarrier()
     func titleScroll(scroll: HTScrollTitleView, selectIndex: Int) {
@@ -59,18 +51,11 @@ class ViewController: UIViewController, HTScrollTitleDelegate {
         view.addSubview(headerImage)
         view.addSubview(userInfoView)
         view.addSubview(userIcon)
-//        var config = HTScrollTitleConfig()
-//        config.titleColor = .red
-//        config.selectTitleColor = .green
-//        config.indicatorColor = .blue
-//        config.borderColor = .black
-//        config.currentIndex = 4
-//        config.bottomLineColor = .darkGray
-//        scrol = HTScrollTitleView(frame: CGRect(x: 50, y: 200, width: SCREEN_W - 100, height: 50), titleArr: ["互动", "表演", "贴纸", "问我", "手", "铁血书生郭沫若", "从善如流马歇尔"], delegate: self, scrollTitleConfig: config)
-//        view.addSubview(scrol)
-//
-//        let loading = MGLoadView(frame: CGRect(x: 50, y: 400, width: 150, height: 150))
-//        view.addSubview(loading)
+        HTAlamofireManager.post(url: "s", parameters: nil, header: nil, success: { (data) in
+            
+        }) { (error) in
+            
+        }
     }
     
     @objc func test() {

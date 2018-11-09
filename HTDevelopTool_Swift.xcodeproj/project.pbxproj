@@ -151,7 +151,6 @@
 		181879541FE27C3D009CD807 /* 自定义控件 */ = {
 			isa = PBXGroup;
 			children = (
-				8EC4B5CB20D8D66600CF31E3 /* 自定义Layer篇 */,
 				8E6A1A9D20D0C096001B1A1F /* 自定义HUD */,
 				8E51F56120C66F43007AE705 /* 滚动的标题栏 */,
 				181879591FE27C90009CD807 /* 自定义时间选择器 */,
@@ -238,13 +237,6 @@
 				8E6A1A9E20D0C0C4001B1A1F /* HTHUD.swift */,
 			);
 			path = "自定义HUD";
-			sourceTree = "<group>";
-		};
-		8EC4B5CB20D8D66600CF31E3 /* 自定义Layer篇 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "自定义Layer篇";
 			sourceTree = "<group>";
 		};
 		8EEB162A20BFEEB80055E118 /* 给视频图片添加水印 */ = {

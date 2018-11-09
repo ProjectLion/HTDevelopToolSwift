@@ -131,7 +131,7 @@ class HTHUD: UIView {
         case .custom:
             break
         case .progress:
-            activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+            activityView = UIActivityIndicatorView(style: .gray)
             activityView?.center = CGPoint(x: hudMin_W / 2, y: hudMin_W / 2)
             bezelView.contentView.addSubview(activityView!)
             break
@@ -152,7 +152,7 @@ class HTHUD: UIView {
     private func show(animated: Bool) {
         activityView?.startAnimating()
         timer = Timer(timeInterval: timeValue, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
-        RunLoop.current.add(timer!, forMode: .defaultRunLoopMode)
+        RunLoop.current.add(timer!, forMode: RunLoop.Mode.default)
         isAnimate = animated
         if animated {
             switch animatedStyle {

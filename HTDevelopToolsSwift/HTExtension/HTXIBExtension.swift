@@ -57,4 +57,31 @@ extension NSLayoutConstraint {
             return true
         }
     }
+    
+    @IBInspectable public var fitNavHeight: Bool {
+        set {
+            if newValue {
+                if isIphoneX {
+                    constant = constant + 24
+                }
+            }
+        }
+        get {
+            return false
+        }
+    }
+    
+    @IBInspectable public var fitTabBar: Bool {
+        set {
+            if newValue {
+                if isIphoneX {
+                    constant = constant + 34
+                }
+            }
+        }
+        get {
+            return false
+        }
+    }
+    
 }

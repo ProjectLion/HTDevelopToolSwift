@@ -50,8 +50,8 @@ class HTCustomNavController: UIViewController {
         }
     }
     
-    /// 统一设置所有导航条上文字的字体色(默认为透明)
-    open var allTitleColor: UIColor = UIColor.clear{
+    /// 统一设置所有导航条上文字的字体色(默认为白色)
+    open var allTitleColor: UIColor = UIColor.white{
         didSet{
             titleLabel.textColor = allTitleColor
             rightLabel.textColor = allTitleColor
@@ -185,7 +185,7 @@ class HTCustomNavController: UIViewController {
         if backImageString != "" {
             backBtn.frame = CGRect(x: 20, y: viewY, width: 44, height: 44)
             backBtn.adjustsImageWhenHighlighted = false
-            backBtn.setImage(UIImage.init(named: backImageString), for: .normal)
+            backBtn.setImage(UIImage(named: backImageString), for: .normal)
             backBtn.addTarget(self, action: #selector(clickBackBtn), for: .touchUpInside)
             topView.addSubview(backBtn)
         }

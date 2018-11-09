@@ -35,7 +35,14 @@ public let SCREEN_W = UIScreen.ht_screecWidth
 /// 屏幕高
 public let SCREEN_H = UIScreen.ht_screenHeight
 /// 是否是iPhone X
-public let isIphoneX = ((SCREEN_W == 375.0 && SCREEN_H == 812.0) ? true : false)
+public let isIphoneX = isX()
+fileprivate func isX() -> Bool {
+    if #available(iOS 11.0, *) {
+        return (UIApplication.shared.windows.first?.safeAreaInsets.bottom)! > 0
+    } else {
+        return false
+    }
+}
 /// 经过比例适配后的宽
 public func ht_W(_ w: CGFloat) -> CGFloat{
     return UIScreen.ht_setWidth(width: w)

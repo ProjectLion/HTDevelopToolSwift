@@ -15,8 +15,6 @@ class Model: NSObject {
     }
     
     override func setValue(_ value: Any?, forKey key: String) {
-        print("HT------>DEBUG: 收到的key\(key)")
-        print("HT------>DEBUG: 收到的value\(value)")
     }
     
     var id: Int = 0

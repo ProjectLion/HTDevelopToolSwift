@@ -77,7 +77,7 @@ class HTImageWater: NSObject {
         let opts = [AVURLAssetPreferPreciseDurationAndTimingKey: true]
         videoAsset = AVURLAsset(url: URL(fileURLWithPath: path), options: opts)     //初始化视频媒体文件
         let startTime = CMTime(seconds: 0.0, preferredTimescale: 600)    //2
-        let endTime = CMTime(seconds: (videoAsset?.duration)!.getSeconds(), preferredTimescale: (videoAsset?.duration.timescale)!)
+        let endTime = CMTime(seconds: (videoAsset?.duration)!.seconds, preferredTimescale: (videoAsset?.duration.timescale)!)
         //声音采集
         let audioAsset = AVURLAsset(url: URL(fileURLWithPath: path), options: opts)
         //2 创建AVMutableComposition实例. apple developer 里边的解释 【AVMutableComposition is a mutable subclass of AVComposition you use when you want to create a new composition from existing assets. You can add and remove tracks, and you can add, remove, and scale time ranges.】
@@ -149,13 +149,12 @@ class HTImageWater: NSObject {
         applyVideoEffectTo(composition: mainCompositionInst, waterImg: waterImage, size: CGSize(width: renderWidth, height: renderHeight))
         
         unlink((path as NSString).utf8String!)
-        path.utf8.description
         
         // 后续视频输出
         dlink = CADisplayLink(target: self, selector: #selector(displayLinkAction))
         //    [dlink setFrameInterval:15];
         dlink?.preferredFramesPerSecond = 10
-        dlink?.add(to: RunLoop.current, forMode: .defaultRunLoopMode)
+        dlink?.add(to: RunLoop.current, forMode: RunLoop.Mode.default)
         dlink?.isPaused = false
         // 5 - 视频文件输出
         

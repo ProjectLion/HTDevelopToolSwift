@@ -17,6 +17,28 @@ import Alamofire
 /// 网络请求管理类 (可以基于具体项目请求数据再进行封装)
 class HTAlamofireManager: NSObject {
     
+    enum NetWorkStatuType {
+        case wifi
+        case wwan
+        case not
+    }
+    
+    /// 下载请求对象
+    var request: DownloadRequest!
+    /// 断点保存的data数据
+    var currentData: Data?
+    /// 断点数据保存地址
+    var saveFilePath: DownloadRequest.DownloadFileDestination!
+    
+    var manager = NetworkReachabilityManager(host: "www.baidu.com")
+    
+    var netStatus: NetWorkStatuType = .not
+    
+    static let shared = HTAlamofireManager()
+    private override init() {
+        
+    }
+    
     /// 默认 (get请求)
     ///
     /// - Parameters:
@@ -69,4 +91,33 @@ class HTAlamofireManager: NSObject {
             }
         }
     }
+    
+    /// 下载
+    ///
+    /// - Parameters:
+    ///   - url: 下载地址
+    ///   - progress: 进度回调
+    ///   - success: 下载成功回调
+    ///   - failure: 下载失败回调
+    func downLoad(url: URLConvertible, toPath path: String, progress: @escaping (Progress) -> Void, success: @escaping () -> Void, failure: @escaping (Error?) -> Void) {
+        saveFilePath = {
+            _, _ in
+            return (URL(fileURLWithPath: path), [.removePreviousFile])
+        }
+        if let data = currentData {
+            request = Alamofire.download(resumingWith: data, to: saveFilePath)
+        } else {
+            request = Alamofire.download(url, to: saveFilePath)
+        }
+        request.downloadProgress(closure: progress)
+        request.responseData { (response) in
+            response.result.ifSuccess {
+                success()
+                }.ifFailure {
+                    self.currentData = response.resumeData
+                    failure(response.result.error)
+            }
+        }
+    }
+    
 }

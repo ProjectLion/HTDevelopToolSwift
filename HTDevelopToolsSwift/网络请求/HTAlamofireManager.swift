@@ -24,13 +24,16 @@ class HTAlamofireManager: NSObject {
     }
     
     /// 下载请求对象
-    var request: DownloadRequest!
+    private var downRequest: DownloadRequest!
     /// 断点保存的data数据
-    var currentData: Data?
+    private var currentData: Data?
     /// 断点数据保存地址
-    var saveFilePath: DownloadRequest.DownloadFileDestination!
+    private var saveFilePath: DownloadRequest.DownloadFileDestination!
     
-    var manager = NetworkReachabilityManager(host: "www.baidu.com")
+    /// 上传请求对象
+    private var uploadRequest: UploadRequest!
+    
+    private var manager = NetworkReachabilityManager(host: "www.baidu.com")
     
     var netStatus: NetWorkStatuType = .not
     
@@ -105,12 +108,12 @@ class HTAlamofireManager: NSObject {
             return (URL(fileURLWithPath: path), [.removePreviousFile])
         }
         if let data = currentData {
-            request = Alamofire.download(resumingWith: data, to: saveFilePath)
+            downRequest = Alamofire.download(resumingWith: data, to: saveFilePath)
         } else {
-            request = Alamofire.download(url, to: saveFilePath)
+            downRequest = Alamofire.download(url, to: saveFilePath)
         }
-        request.downloadProgress(closure: progress)
-        request.responseData { (response) in
+        downRequest.downloadProgress(closure: progress)
+        downRequest.responseData { (response) in
             response.result.ifSuccess {
                 success()
                 }.ifFailure {
@@ -118,6 +121,39 @@ class HTAlamofireManager: NSObject {
                     failure(response.result.error)
             }
         }
+    }
+    
+    /// 上传
+    ///
+    /// - Parameters:
+    ///   - filePath: 文件地址
+    ///   - toUrl: 上传地址
+    ///   - progress: 进度回调
+    ///   - success: 成功回调
+    ///   - failure: 失败回调
+    func upload(filePath path: String, toUrl to: URLConvertible, progress: @escaping (Progress) -> Void = { _ in }, success: @escaping () -> Void, failure: @escaping (Error?) -> Void) {
+        uploadRequest = Alamofire.upload(URL(fileURLWithPath: path), to: to)
+        uploadRequest.uploadProgress(closure: progress)
+        uploadRequest.responseData(completionHandler: { (response) in
+            response.result.ifSuccess {
+                success()
+                }.ifFailure {
+                    failure(response.result.error)
+            }
+        })
+    }
+    
+    
+    func upload(fileData data: Data, toUrl to: URLConvertible, progress: @escaping (Progress) -> Void = { _ in }, success: @escaping () -> Void, failure: @escaping (Error?) -> Void) {
+        uploadRequest = Alamofire.upload(data, to: to)
+        uploadRequest.uploadProgress(closure: progress)
+        uploadRequest.responseData(completionHandler: { (response) in
+            response.result.ifSuccess {
+                success()
+                }.ifFailure {
+                    failure(response.result.error)
+            }
+        })
     }
     
 }

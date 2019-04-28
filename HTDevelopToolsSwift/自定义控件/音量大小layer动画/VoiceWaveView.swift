@@ -39,14 +39,12 @@ class VoiceWaveView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    /// 更新 voice为百分比 (0-1之间)
     public func update(voice: CGFloat) {
-        var voi = voice
-        if voi > 110 {
-            assert(true, "分贝超出")
-            voi = 110
+        if voice < 0 || voice > 1 {
+            assert(false, "voice值为0-1")
         }
-        voiceContent.path = UIBezierPath(roundedRect: CGRect(x: 0, y: voiceBorder.frame.height - (voi / 110.0) * voiceBorder.frame.height, width: voiceBorder.frame.width, height: voiceBorder.frame.height), cornerRadius: 0).cgPath
+        voiceContent.path = UIBezierPath(roundedRect: CGRect(x: 0, y: voiceBorder.frame.height - voice * voiceBorder.frame.height, width: voiceBorder.frame.width, height: voiceBorder.frame.height), cornerRadius: 0).cgPath
     }
     
 }

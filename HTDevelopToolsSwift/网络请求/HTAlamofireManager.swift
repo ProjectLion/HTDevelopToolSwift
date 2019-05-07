@@ -1,5 +1,5 @@
 //
-//  HTAlamofireManager.swift
+//  HTAFManager.swift
 //  HTDevelopTool_Swift
 //
 //  Created by Ht on 2018/11/9.
@@ -28,7 +28,7 @@ class HTAlamofireManager: NSObject {
     /// 断点保存的data数据
     private var currentData: Data?
     /// 断点数据保存地址
-    private var saveFilePath: DownloadRequest.DownloadFileDestination!
+    private var saveFilePath: DownloadRequest.Destination!
     
     /// 上传请求对象
     private var uploadRequest: UploadRequest!
@@ -49,11 +49,11 @@ class HTAlamofireManager: NSObject {
     ///   - success: 请求成功的回调
     ///   - failure: 请求失败的回调
     class func defaultRequest(url: URLConvertible, success: @escaping (_ data: Any?) -> Void, failure: @escaping (_ error: Error?) -> Void) {
-        Alamofire.request(url).responseJSON { (response) in
-            response.result.ifSuccess {
-                success(response.result.value)
-                }.ifFailure {
-                    failure(response.result.error)
+        AF.request(url).responseJSON { (response) in
+            if let error = response.error {
+                failure(error)
+            } else {
+                success(response.value)
             }
         }
     }
@@ -67,11 +67,11 @@ class HTAlamofireManager: NSObject {
     ///   - success: 请求成功的回调
     ///   - failure: 请求失败的回调
     class func post(url: URLConvertible, parameters: Parameters?, encoding: ParameterEncoding = JSONEncoding.default, header: HTTPHeaders?, success: @escaping (_ data: Any?) -> Void, failure: @escaping (_ error: Error?) -> Void) {
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: encoding, headers: header).responseJSON { (response) in
-            response.result.ifSuccess {
-                success(response.result.value)
-                }.ifFailure {
-                    failure(response.result.error)
+        AF.request(url, method: .post, parameters: parameters, encoding: encoding, headers: header).responseJSON { (response) in
+            if let error = response.error {
+                failure(error)
+            } else {
+                success(response.value)
             }
         }
     }
@@ -86,11 +86,11 @@ class HTAlamofireManager: NSObject {
     ///   - success: 请求成功的回调
     ///   - failure: 请求失败的回调
     class func get(url: URLConvertible, parameters: Parameters?, encoding: ParameterEncoding = JSONEncoding.default, header: HTTPHeaders?, success: @escaping (_ data: Any?) -> Void, failure: @escaping (_ error: Error?) -> Void) {
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: encoding, headers: header).responseJSON { (response) in
-            response.result.ifSuccess {
-                success(response.result.value)
-                }.ifFailure {
-                    failure(response.result.error)
+        AF.request(url, method: .get, parameters: parameters, encoding: encoding, headers: header).responseJSON { (response) in
+            if let error = response.error {
+                failure(error)
+            } else {
+                success(response.value)
             }
         }
     }
@@ -108,17 +108,16 @@ class HTAlamofireManager: NSObject {
             return (URL(fileURLWithPath: path), [.removePreviousFile])
         }
         if let data = currentData {
-            downRequest = Alamofire.download(resumingWith: data, to: saveFilePath)
+            downRequest = AF.download(resumingWith: data, to: saveFilePath)
         } else {
-            downRequest = Alamofire.download(url, to: saveFilePath)
+            downRequest = AF.download(url, to: saveFilePath)
         }
         downRequest.downloadProgress(closure: progress)
         downRequest.responseData { (response) in
-            response.result.ifSuccess {
+            if let error = response.error {
+                failure(error)
+            } else {
                 success()
-                }.ifFailure {
-                    self.currentData = response.resumeData
-                    failure(response.result.error)
             }
         }
     }
@@ -132,26 +131,26 @@ class HTAlamofireManager: NSObject {
     ///   - success: 成功回调
     ///   - failure: 失败回调
     func upload(filePath path: String, toUrl to: URLConvertible, progress: @escaping (Progress) -> Void = { _ in }, success: @escaping () -> Void, failure: @escaping (Error?) -> Void) {
-        uploadRequest = Alamofire.upload(URL(fileURLWithPath: path), to: to)
+        uploadRequest = AF.upload(URL(fileURLWithPath: path), to: to)
         uploadRequest.uploadProgress(closure: progress)
         uploadRequest.responseData(completionHandler: { (response) in
-            response.result.ifSuccess {
+            if let error = response.error {
+                failure(error)
+            } else {
                 success()
-                }.ifFailure {
-                    failure(response.result.error)
             }
         })
     }
     
     
     func upload(fileData data: Data, toUrl to: URLConvertible, progress: @escaping (Progress) -> Void = { _ in }, success: @escaping () -> Void, failure: @escaping (Error?) -> Void) {
-        uploadRequest = Alamofire.upload(data, to: to)
+        uploadRequest = AF.upload(data, to: to)
         uploadRequest.uploadProgress(closure: progress)
         uploadRequest.responseData(completionHandler: { (response) in
-            response.result.ifSuccess {
+            if let error = response.error {
+                failure(error)
+            } else {
                 success()
-                }.ifFailure {
-                    failure(response.result.error)
             }
         })
     }

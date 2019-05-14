@@ -25,7 +25,6 @@
 		186A2848201084830058AF10 /* HTUIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186A2847201084830058AF10 /* HTUIImageExtension.swift */; };
 		186D22F620416ACC0017949C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D22F520416ACC0017949C /* Model.swift */; };
 		8E07CAF721096EB400DE10AE /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E07CAF621096EB400DE10AE /* TagCell.swift */; };
-		8E07CAF92109785600DE10AE /* TagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E07CAF82109785600DE10AE /* TagCollectionView.swift */; };
 		8E07CAFB21097D1600DE10AE /* CollectionTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E07CAFA21097D1600DE10AE /* CollectionTagCell.swift */; };
 		8E4ED3A720DCD16800F37624 /* RootViewContro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4ED3A620DCD16800F37624 /* RootViewContro.swift */; };
 		8E51F56320C66F61007AE705 /* HTScrollTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51F56220C66F61007AE705 /* HTScrollTitleView.swift */; };
@@ -67,7 +66,6 @@
 		186D22F520416ACC0017949C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7906B39BD6D88B5EE7C7DF8E /* Pods-HTDevelopTool_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTDevelopTool_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-HTDevelopTool_Swift/Pods-HTDevelopTool_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		8E07CAF621096EB400DE10AE /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
-		8E07CAF82109785600DE10AE /* TagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionView.swift; sourceTree = "<group>"; };
 		8E07CAFA21097D1600DE10AE /* CollectionTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTagCell.swift; sourceTree = "<group>"; };
 		8E4ED3A620DCD16800F37624 /* RootViewContro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewContro.swift; sourceTree = "<group>"; };
 		8E51F56220C66F61007AE705 /* HTScrollTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTScrollTitleView.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				181879451FE27BFA009CD807 /* HTDevelopTool_Swift.xcdatamodeld */,
 				8E5300E620DB882000AAF134 /* Controllers.swift */,
 				8E07CAF621096EB400DE10AE /* TagCell.swift */,
-				8E07CAF82109785600DE10AE /* TagCollectionView.swift */,
 				8E07CAFA21097D1600DE10AE /* CollectionTagCell.swift */,
 			);
 			path = HTDevelopTool_Swift;
@@ -309,7 +306,7 @@
 				181879371FE27BFA009CD807 /* Sources */,
 				181879381FE27BFA009CD807 /* Frameworks */,
 				181879391FE27BFA009CD807 /* Resources */,
-				742850E2B3588C9F3F7FC869 /* [CP] Embed Pods Frameworks */,
+				BF4FCD4F2EDC7BB0DEACC0C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -368,24 +365,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		742850E2B3588C9F3F7FC869 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HTDevelopTool_Swift/Pods-HTDevelopTool_Swift-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HTDevelopTool_Swift/Pods-HTDevelopTool_Swift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9C19030CCDCF5A4C1E2A00E4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -402,6 +381,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF4FCD4F2EDC7BB0DEACC0C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HTDevelopTool_Swift/Pods-HTDevelopTool_Swift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HTDevelopTool_Swift/Pods-HTDevelopTool_Swift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -424,7 +427,6 @@
 				8EA9EA3C207205CF00C9C706 /* HTLabelExtension.swift in Sources */,
 				181879471FE27BFA009CD807 /* HTDevelopTool_Swift.xcdatamodeld in Sources */,
 				8EA9EA3D207205CF00C9C706 /* HTUIButtonExtension.swift in Sources */,
-				8E07CAF92109785600DE10AE /* TagCollectionView.swift in Sources */,
 				8EFAA76821460BC000F82216 /* HTXIBExtension.swift in Sources */,
 				8E07CAFB21097D1600DE10AE /* CollectionTagCell.swift in Sources */,
 				8E6A1A9F20D0C0C4001B1A1F /* HTHUD.swift in Sources */,
